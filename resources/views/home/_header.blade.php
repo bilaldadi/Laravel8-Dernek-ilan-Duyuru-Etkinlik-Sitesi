@@ -2,7 +2,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Spectral</a></h1>
+						<h1><a href="#">ESC Association</a></h1>
 						<nav id="nav">
 							<ul>
 								<li class="special">
