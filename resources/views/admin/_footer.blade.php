@@ -42,21 +42,21 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="pi/vendor/jquery/jquery.min.js"></script>
-    <script src="pi/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('pi')}}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{asset('pi')}}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="pi/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{asset('pi')}}/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="pi/js/sb-admin-2.min.js"></script>
+    <script src="{{asset('pi')}}/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="pi/vendor/chart.js/Chart.min.js"></script>
+    <script src="{{asset('pi')}}/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="pi/js/demo/chart-area-demo.js"></script>
-    <script src="pi/js/demo/chart-pie-demo.js"></script>
+    <script src="{{asset('pi')}}/js/demo/chart-area-demo.js"></script>
+    <script src="{{asset('pi')}}/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

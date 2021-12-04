@@ -16,13 +16,27 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home.index');
-});
+})->name('home');
 
 Route::get('/admin', [\App\Http\Controllers\Admin\HomeController:: class ,'index'])-> name('admin_home')->middleware('auth');
 
 Route::get('/admin/login', [HomeController:: class ,'login'])-> name('admin_login');
 Route::post('/admin/logincheck', [HomeController:: class ,'logincheck'])-> name('admin_logincheck');
 Route::get('/admin/logout', [HomeController:: class ,'logout'])-> name('admin_logout');
+
+Route::middleware(['auth'])->prefix('admin')->group(function() {
+
+Route::get('/', [\App\Http\Controllers\Admin\HomeController:: class ,'index'])->name('admin_home');
+
+Route::get('/menu', [\App\Http\Controllers\Admin\MenuController:: class ,'index'])->name('admin_menu');
+Route::get('/menu/add', [\App\Http\Controllers\Admin\MenuController:: class ,'add'])->name('admin_menu_add');
+Route::get('/menu/update', [\App\Http\Controllers\Admin\MenuController:: class ,'update'])->name('admin_menu_update');
+Route::get('/menu/delete', [\App\Http\Controllers\Admin\MenuController:: class ,'destroy'])->name('admin_menu_delete');
+Route::get('/menu/show', [\App\Http\Controllers\Admin\MenuController:: class ,'show'])->name('admin_menu_show');
+
+});
+
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
