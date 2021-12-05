@@ -22,9 +22,7 @@ class CreateContentsTable extends Migration
             $table->string('image',100)->nullable();
             $table->string('status',5)->nullable()->default('False');
             $table->integer('Menu_id')->default(0);
-            $table->string('announcements')->nullable();
-            $table->string('activities')->nullable();
-            $table->string('news')->nullable();
+            $table->string('type')->nullable();
             $table->integer('user_id')->default(0);
             $table->timestamps();
         });

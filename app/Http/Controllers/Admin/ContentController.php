@@ -16,19 +16,44 @@ class ContentController extends Controller
      */
     public function index()
     {
-         $contentlist = DB::select('select * from contents');
+        $contentlist = DB::select('select * from contents');
 
         return view('admin.content', ['contentlist' => $contentlist]);
     }
 
     /**
      * Show the form for creating a new resource.
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function create(Request $request)
+    {
+
+
+        DB::table('contents')->insert([
+            'title' => $request->input('title'),
+            'keywords' => $request->input('keywords'),
+            'description' => $request->input('description'),
+            'status' => $request->input('status'),
+            'type' => $request->input('type')
+
+        ]);
+
+        return redirect()->route('admin_content');
+
+    }
+
+
+     /**
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function add()
     {
-        //
+        $contentlist = DB::select('select * from contents');
+
+        return view('admin.Content_add', ['contentlist' =>$contentlist]);
     }
 
     /**
@@ -84,6 +109,7 @@ class ContentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('contents')->where('id','=', $id)->delete();
+        return redirect()->route('admin_content');
     }
 }
