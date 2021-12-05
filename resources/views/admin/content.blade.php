@@ -244,7 +244,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Menu Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Content Page</h1>
 
                      <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -259,19 +259,27 @@
                                             <th>Id</th>
                                             <th>ParentId</th>
                                             <th>Title</th>
+                                            <th>Menu id</th>
+                                            <th>Announcements</th>
+                                            <th>Activities</th>
+                                            <th>News</th>
                                             <th>Image</th>
                                             <th>Status</th>
-                                             <th>Edit</th>
+                                            <th>Edit</th>
                                             <th>Delete</th>
 
                                         </tr>
                                     </thead>
                                      <tbody>
-                                     @foreach ($menulist as $rs)
+                                     @foreach ($contentlist as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
                                             <td>{{$rs->parent_id}}</td>
                                             <td>{{$rs->title}}</td>
+                                            <td>{{$rs->Menu_id}}</td>
+                                            <td>{{$rs->announcements}}</td>
+                                            <td>{{$rs->activities}}</td>
+                                            <td>{{$rs->news}}</td>
                                             <td>{{$rs->image}}</td>
                                             <td>{{$rs->status}}</td>
                                             <td>Edit</td>

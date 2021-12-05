@@ -37,6 +37,19 @@ Route::get('/menu/show', [\App\Http\Controllers\Admin\MenuController:: class ,'s
 });
 
 
+Route::middleware(['auth'])->prefix('admin')->group(function() {
+
+Route::get('/', [\App\Http\Controllers\Admin\HomeController:: class ,'index'])->name('admin_home');
+
+Route::get('/content', [\App\Http\Controllers\Admin\contentController:: class ,'index'])->name('admin_content');
+Route::get('/content/add', [\App\Http\Controllers\Admin\contentController:: class ,'add'])->name('admin_content_add');
+Route::get('/content/update', [\App\Http\Controllers\Admin\contentController:: class ,'update'])->name('admin_content_update');
+Route::get('/content/delete', [\App\Http\Controllers\Admin\contentController:: class ,'destroy'])->name('admin_content_delete');
+Route::get('/content/show', [\App\Http\Controllers\Admin\contentController:: class ,'show'])->name('admin_content_show');
+
+});
+
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
