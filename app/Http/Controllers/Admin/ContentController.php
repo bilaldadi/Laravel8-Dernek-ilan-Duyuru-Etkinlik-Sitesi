@@ -35,6 +35,8 @@ class ContentController extends Controller
             'keywords' => $request->input('keywords'),
             'description' => $request->input('description'),
             'status' => $request->input('status'),
+            'Menu_id'=> $request->input('Menu_id'),
+            'user_id' => $request->input('user_id'),
             'type' => $request->input('type')
 
         ]);
@@ -86,7 +88,10 @@ class ContentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Content::find($id);
+        $contentlist = DB::table('contents')->get()->where('parent_id', 0);
+
+        return view('admin.content_edit',['data'=>$data ,'contentlist'=>$contentlist]);
     }
 
     /**
@@ -98,7 +103,17 @@ class ContentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data= Content::find($id);
+
+            $data->title = $request->input('title');
+            $data->keywords = $request->input('keywords');
+            $data->description = $request->input('description');
+            $data->status = $request->input('status');
+            $data->type = $request->input('type');
+            $data->menu_id = $request->input('Menu_id');
+            $data->save();
+            return redirect()->route('admin_content');
+
     }
 
     /**

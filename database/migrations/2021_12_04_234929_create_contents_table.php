@@ -21,9 +21,9 @@ class CreateContentsTable extends Migration
             $table->string('description')->nullable();
             $table->string('image',100)->nullable();
             $table->string('status',5)->nullable()->default('False');
-            $table->integer('Menu_id')->default(0);
+            $table->integer('Menu_id')->nullable();
             $table->string('type')->nullable();
-            $table->integer('user_id')->default(0);
+            $table->integer('user_id')->nullable();
             $table->timestamps();
         });
     }

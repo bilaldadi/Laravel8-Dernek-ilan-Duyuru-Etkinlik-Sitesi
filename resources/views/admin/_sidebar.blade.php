@@ -14,7 +14,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{route('home') }}">
+                <a class="nav-link" href="{{route('admin_home') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -39,7 +39,7 @@
                         <h6 class="collapse-header">Databases:</h6>
                         <a class="collapse-item" href="{{route('admin_menu')}}">Menu</a>
                         <a class="collapse-item" href="{{route('admin_content')}}">Content</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+
                     </div>
                 </div>
             </li>

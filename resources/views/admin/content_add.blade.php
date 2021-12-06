@@ -60,14 +60,14 @@
                                         <input type="text" class="form-control form-control-user" name="description" placeholder="description">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user"  name="menu id"  placeholder="menu id">
+                                        <input type="text" class="form-control form-control-user"  name="Menu_id"  placeholder="menu id">
                                     </div>
 
                                 </div>
 
                                   <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" name="user id" placeholder="User id">
+                                        <input type="text" class="form-control form-control-user" name="user_id" placeholder="User id">
                                     </div>
 
 
@@ -100,12 +100,16 @@
 
 
                                 </div>
+                                <div class="container my-3 bg-light">
+                                    <div class="col-md-12 text-center">
                                 <button href="#" type="submit" class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-check"></i>
                                         </span>
                                         <span class="text">Creat</span>
                                     </button>
+                                    </div>
+                                </div>
 
                             </form>
 

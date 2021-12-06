@@ -80,7 +80,7 @@
                                             <td>{{$rs->type}}</td>
                                             <td>{{$rs->description}}</td>
                                             <td>{{$rs->status}}</td>
-                                            <td>Edit</td>
+                                            <td><a href="{{ route('admin_content_edit',['id' =>$rs->id])}}"> Edit</a></td>
                                             <td> <a href="{{ route('admin_content_delete' ,['id' =>$rs->id])}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-circle btn-lg">
                                         <i class="fas fa-trash"></i>
                                     </a></td>

@@ -44,7 +44,8 @@ Route::get('/', [\App\Http\Controllers\Admin\HomeController:: class ,'index'])->
 Route::get('/content', [\App\Http\Controllers\Admin\contentController:: class ,'index'])->name('admin_content');
 Route::get('/content/add', [\App\Http\Controllers\Admin\contentController:: class ,'add'])->name('admin_content_add');
 Route::post('/content/create', [\App\Http\Controllers\Admin\contentController:: class ,'create'])->name('admin_content_create');
-Route::post('/content/update', [\App\Http\Controllers\Admin\contentController:: class ,'update'])->name('admin_content_update');
+Route::post('/content/update/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'update'])->name('admin_content_update');
+Route::get('/content/edit/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'edit'])->name('admin_content_edit');
 Route::get('/content/delete/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'destroy'])->name('admin_content_delete');
 Route::get('/content/show', [\App\Http\Controllers\Admin\contentController:: class ,'show'])->name('admin_content_show');
 
