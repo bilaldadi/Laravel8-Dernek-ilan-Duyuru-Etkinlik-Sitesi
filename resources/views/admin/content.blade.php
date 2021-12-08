@@ -65,6 +65,8 @@
                                             <th>Type</th>
                                             <th>description</th>
                                             <th>Status</th>
+                                            <th>Image</th>
+                                            <th>Image Gallery</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
 
@@ -80,9 +82,16 @@
                                             <td>{{$rs->type}}</td>
                                             <td>{{$rs->description}}</td>
                                             <td>{{$rs->status}}</td>
-                                            <td><a href="{{ route('admin_content_edit',['id' =>$rs->id])}}"> Edit</a></td>
+                                            <td>
+                                                @if ($rs->image)
+                                                    <img src="{{Storage::url($rs->image)}}" height="30">
+                                                @endif
+                                            </td>
+                                            <td><a href="{{route('admin_image_add',['content_id' =>$rs->id])}}"><i class="far fa-images"></i></a></td>
+
+                                            <td><a href="{{ route('admin_content_edit',['id' =>$rs->id])}}"> <i class="far fa-edit"></i></a></td>
                                             <td> <a href="{{ route('admin_content_delete' ,['id' =>$rs->id])}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-circle btn-lg">
-                                        <i class="fas fa-trash"></i>
+                                                    <i class="far fa-trash-alt"></i>
                                     </a></td>
                                         </tr>
                                         @endforeach

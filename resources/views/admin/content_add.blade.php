@@ -43,7 +43,7 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Add Content</h1>
                             </div>
-                            <form class="user" action="{{ route('admin_content_create') }}" method="post" >
+                            <form class="user" action="{{ route('admin_content_create') }}" method="post" enctype="multipart/form-data" >
                             @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -70,13 +70,16 @@
                                         <input type="text" class="form-control form-control-user" name="user_id" placeholder="User id">
                                     </div>
 
+                                      <div class="col-sm-6 mb-3 mb-sm-0">
+                                          <input type="text" class="form-control form-control-user" name="parent_id" placeholder="parent_id">
+                                      </div>
+
+
 
                                 </div>
 
 
-                                <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" name="Details" placeholder="Details">
-                                </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                        <label for="cars">Type:</label>
@@ -100,6 +103,12 @@
 
 
                                 </div>
+                                <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="file" class="form-control form-control-user" name="image">
+                                </div>
+                                </div>
+
                                 <div class="container my-3 bg-light">
                                     <div class="col-md-12 text-center">
                                 <button href="#" type="submit" class="btn btn-success btn-icon-split">

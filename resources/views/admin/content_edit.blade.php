@@ -43,7 +43,7 @@
             <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Edit Content</h1>
             </div>
-            <form class="user" action="{{ route('admin_content_update',['id'=>$data->id]) }}" method="post" >
+            <form class="user" action="{{ route('admin_content_update',['id'=>$data->id]) }}" method="post" enctype="multipart/form-data" >
                 @csrf
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -75,15 +75,14 @@
                         <input type="text" class="form-control form-control-user" name="user_id" value="{{$data->user_id}}">
                     </div>
 
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <label>Parent_id:</label>
+                        <input type="text" class="form-control form-control-user" name="parent_id" value="{{$data->parent_id}}">
+                    </div>
+
 
                 </div>
 
-
-                <div class="form-group">
-                    <label>Details:</label>
-                    <input type="text" class="form-control form-control-user" name="Details" placeholder="Details">
-
-                </div>
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="cars">Type:</label>
@@ -105,6 +104,15 @@
                             <option value="False">False</option>
 
                         </select>
+                    </div>
+                </div>
+                    <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <label>Image:</label>
+                        <input type="file" class="form-control form-control-user" name="image" value="{{$data->image}}">
+                        @if($data->image)
+                            <img src="{{Storage::url($data->image)}}" height="60">
+                        @endif
                     </div>
 
 

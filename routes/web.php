@@ -41,13 +41,25 @@ Route::middleware(['auth'])->prefix('admin')->group(function() {
 
 Route::get('/', [\App\Http\Controllers\Admin\HomeController:: class ,'index'])->name('admin_home');
 
-Route::get('/content', [\App\Http\Controllers\Admin\contentController:: class ,'index'])->name('admin_content');
-Route::get('/content/add', [\App\Http\Controllers\Admin\contentController:: class ,'add'])->name('admin_content_add');
-Route::post('/content/create', [\App\Http\Controllers\Admin\contentController:: class ,'create'])->name('admin_content_create');
-Route::post('/content/update/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'update'])->name('admin_content_update');
-Route::get('/content/edit/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'edit'])->name('admin_content_edit');
-Route::get('/content/delete/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'destroy'])->name('admin_content_delete');
-Route::get('/content/show', [\App\Http\Controllers\Admin\contentController:: class ,'show'])->name('admin_content_show');
+    Route::get('/content', [\App\Http\Controllers\Admin\contentController:: class ,'index'])->name('admin_content');
+    Route::post('/content/store', [\App\Http\Controllers\Admin\contentController:: class ,'store'])->name('admin_content_store');
+    Route::get('/content/add', [\App\Http\Controllers\Admin\contentController:: class ,'add'])->name('admin_content_add');
+    Route::post('/content/create', [\App\Http\Controllers\Admin\contentController:: class ,'create'])->name('admin_content_create');
+    Route::post('/content/update/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'update'])->name('admin_content_update');
+    Route::get('/content/edit/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'edit'])->name('admin_content_edit');
+    Route::get('/content/delete/{id}', [\App\Http\Controllers\Admin\contentController:: class ,'destroy'])->name('admin_content_delete');
+    Route::get('/content/show', [\App\Http\Controllers\Admin\contentController:: class ,'show'])->name('admin_content_show');
+
+});
+
+
+Route::middleware(['auth'])->prefix('admin')->group(function() {
+
+
+    Route::get('/image/create/{content_id}', [\App\Http\Controllers\Admin\ImageController:: class ,'create'])->name('admin_image_add');
+    Route::post('/image/store/{content_id}', [\App\Http\Controllers\Admin\ImageController:: class ,'store'])->name('admin_image_store');
+    Route::get('/image/delete/{id}/{content_id}', [\App\Http\Controllers\Admin\ImageController:: class ,'destroy'])->name('admin_image_delete');
+    Route::get('/image/show', [\App\Http\Controllers\Admin\ImageController:: class ,'show'])->name('admin_image_show');
 
 });
 

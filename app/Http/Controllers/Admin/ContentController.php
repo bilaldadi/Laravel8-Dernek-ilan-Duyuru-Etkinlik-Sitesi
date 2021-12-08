@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ContentController extends Controller
 {
@@ -32,12 +34,14 @@ class ContentController extends Controller
 
         DB::table('contents')->insert([
             'title' => $request->input('title'),
+            'parent_id' => $request->input('parent_id'),
             'keywords' => $request->input('keywords'),
             'description' => $request->input('description'),
             'status' => $request->input('status'),
             'Menu_id'=> $request->input('Menu_id'),
             'user_id' => $request->input('user_id'),
-            'type' => $request->input('type')
+            'type' => $request->input('type'),
+            'image' => $request->input('image')
 
         ]);
 
@@ -66,7 +70,21 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data= new Content;
+
+        $data->parent_id= $request->input('parent_id');
+        $data->title= $request->input('title');
+        $data->keywords= $request->input('keywords');
+        $data->description= $request->input('description');
+        $data->image= Storage::putFile('images',$request->file('image'));
+        $data->status= $request->input('status');
+        $data->Menu_id= $request->input('Menu_id');
+        $data->Menu_id= $request->input('user_id');
+        $data->type= $request->input('type');
+        $data->user_id= Auth::id();
+
+        $data->save();
+        return redirect()->route('admin_content');
     }
 
     /**
@@ -89,7 +107,7 @@ class ContentController extends Controller
     public function edit($id)
     {
         $data = Content::find($id);
-        $contentlist = DB::table('contents')->get()->where('parent_id', 0);
+        $contentlist = DB::table('contents')->where('parent_id',0)->get();
 
         return view('admin.content_edit',['data'=>$data ,'contentlist'=>$contentlist]);
     }
@@ -101,16 +119,19 @@ class ContentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Content $content ,$id)
     {
         $data= Content::find($id);
 
+            $data->parent_id= $request->input('parent_id');
             $data->title = $request->input('title');
             $data->keywords = $request->input('keywords');
             $data->description = $request->input('description');
             $data->status = $request->input('status');
             $data->type = $request->input('type');
+            $data->image= Storage::putFile('images',$request->file('image'));
             $data->menu_id = $request->input('Menu_id');
+            $data->menu_id = $request->input('user_id');
             $data->save();
             return redirect()->route('admin_content');
 
