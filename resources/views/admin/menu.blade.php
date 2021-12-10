@@ -50,7 +50,7 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>ParentId</th>
+                                            <th>Parent</th>
                                             <th>Title</th>
                                             <th>Image</th>
                                             <th>Status</th>

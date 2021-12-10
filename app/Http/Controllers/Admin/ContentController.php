@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Content;
+use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,25 @@ use Illuminate\Support\Facades\Storage;
 
 class ContentController extends Controller
 {
+
+
+    protected $appends=[
+        'getParentsTree'
+    ];
+
+    public static function getParentsTree($content,$title)
+    {
+
+        if ($content->parent_id == 0) {
+            return $title;
+        }
+        $parent = Menu::find($content->parent_id);
+        $title = $parent->title . '>' . $title;
+
+        return MenuController::getParentsTree($parent, $title);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +38,7 @@ class ContentController extends Controller
      */
     public function index()
     {
-        $contentlist = DB::select('select * from contents');
+        $contentlist = Content::with('children')->get();
 
         return view('admin.content', ['contentlist' => $contentlist]);
     }
@@ -129,9 +149,11 @@ class ContentController extends Controller
             $data->description = $request->input('description');
             $data->status = $request->input('status');
             $data->type = $request->input('type');
-            $data->image= Storage::putFile('images',$request->file('image'));
             $data->menu_id = $request->input('Menu_id');
             $data->menu_id = $request->input('user_id');
+            if ($request->file('image')!=null){
+                $data->image= Storage::putFile('images',$request->file('image'));
+            }
             $data->save();
             return redirect()->route('admin_content');
 

@@ -69,12 +69,15 @@
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" name="user_id" placeholder="User id">
                                     </div>
+                                  </div>
 
-                                      <div class="col-sm-6 mb-3 mb-sm-0">
-                                          <input type="text" class="form-control form-control-user" name="parent_id" placeholder="parent_id">
-                                      </div>
-
-
+                                <div class="form-group row">
+                                      <select class="form-control select2" name="parent_id">
+                                          <option value="0" selected="selected">Main Menu</option>
+                                          @foreach($contentlist as $rs)
+                                              <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->title)}}</option>
+                                          @endforeach
+                                      </select>
 
                                 </div>
 
@@ -83,7 +86,7 @@
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                        <label for="cars">Type:</label>
-                                          <select id="type" name="type" class="animated--grow-in">
+                                          <select class="form-control select2" id="type" name="type" class="animated--grow-in">
                                             <option value="Announcement">Announcement</option>
                                             <option value="Activities">Activities</option>
                                             <option value="News">News</option>
@@ -94,7 +97,7 @@
                                       <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                        <label for="cars">status:</label>
-                                          <select id="type" name="status" class="animated--grow-in">
+                                          <select class="form-control select2" id="type" name="status" class="animated--grow-in">
                                             <option value="True">True</option>
                                             <option value="False">False</option>
 

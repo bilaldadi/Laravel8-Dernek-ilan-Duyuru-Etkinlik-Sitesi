@@ -1,92 +1,141 @@
+<!-- Banner -->
+<section id="banner">
+    <div class="content">
+        <header>
+            <h2>English Speaking club Association</h2>
+            <p>Here for better english learning.<br />
+               With the old fashoin ways.</p>
+        </header>
+        <span class="image"><img src="images/pic01.jpg" alt="" /></span>
+    </div>
+    <a href="#one" class="goto-next scrolly">Next</a>
+</section>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>English speaking club Association</h2>
-							<p>English speaking club Association<br />
-							in karabük<br />
-							Made by <a href="https://www.instagram.com/bilal.d7/">Bilal Dadı</a>.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button primary">Activate your membership</a></li>
-							</ul>
-						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
-					</section>
+<!-- One -->
+<section id="one" class="spotlight style1 bottom">
+    <span class="image fit main"><img src="images/pic02.jpg" alt="" /></span>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-12-medium">
+                    <header>
+                        <h2>Odio faucibus ipsum integer consequat</h2>
+                        <p>Nascetur eu nibh vestibulum amet gravida nascetur praesent</p>
+                    </header>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <p>Feugiat accumsan lorem eu ac lorem amet sed accumsan donec.
+                        Blandit orci porttitor semper. Arcu phasellus tortor enim mi
+                        nisi praesent dolor adipiscing. Integer mi sed nascetur cep aliquet
+                        augue varius tempus lobortis porttitor accumsan consequat
+                        adipiscing lorem dolor.</p>
+                </div>
+                <div class="col-4 col-12-medium">
+                    <p>Morbi enim nascetur et placerat lorem sed iaculis neque ante
+                        adipiscing adipiscing metus massa. Blandit orci porttitor semper.
+                        Arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer
+                        mi sed nascetur cep aliquet augue varius tempus. Feugiat lorem
+                        ipsum dolor nullam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#two" class="goto-next scrolly">Next</a>
+</section>
 
-				<!-- One -->
-					<section id="one" class="wrapper style1 special">
-						<div class="inner">
-							<header class="major">
-								<h2>in our Association we aim to improve our English together<br />
-								by speaking about any subject you like </h2>
-								<p>we will provide you with any kind of support you want<br />
-								and we have many membership categories you choose what you like. </p>
-							</header>
-							<ul class="icons major">
-								<li><span class="icon fa-gem major style1"><span class="label">Lorem</span></span></li>
-								<li><span class="icon fa-heart major style2"><span class="label">Ipsum</span></span></li>
-								<li><span class="icon solid fa-code major style3"><span class="label">Dolor</span></span></li>
-							</ul>
-						</div>
-					</section>
+<!-- Two -->
+<section id="two" class="spotlight style2 right">
+    <span class="image fit main"><img src="images/pic03.jpg" alt="" /></span>
+    <div class="content">
+        <header>
+            <h2>Interdum amet non magna accumsan</h2>
+            <p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
+        </header>
+        <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+        <ul class="actions">
+            <li><a href="#" class="button">Learn More</a></li>
+        </ul>
+    </div>
+    <a href="#three" class="goto-next scrolly">Next</a>
+</section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
-						<section class="spotlight">
-							<div class="image"><img src="images/pic01.jpg" alt="" /></div><div class="content">
-								<h2>Magna primis lobortis<br />
-								sed ullamcorper</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
-						<section class="spotlight">
-							<div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
-								<h2>Tortor dolore feugiat<br />
-								elementum magna</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
-							</div>
-						</section>
+<!-- Three -->
+<section id="three" class="spotlight style3 left">
+    <span class="image fit main bottom"><img src="images/pic04.jpg" alt="" /></span>
+    <div class="content">
+        <header>
+            <h2>Interdum felis blandit praesent sed augue</h2>
+            <p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
+        </header>
+        <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+        <ul class="actions">
+            <li><a href="#" class="button">Learn More</a></li>
+        </ul>
+    </div>
+    <a href="#four" class="goto-next scrolly">Next</a>
+</section>
 
+<!-- Four -->
+<section id="four" class="wrapper style1 special fade-up">
+    <div class="container">
+        <header class="major">
+            <h2>Accumsan sed tempus adipiscing blandit</h2>
+            <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+        </header>
+        <div class="box alt">
+            <div class="row gtr-uniform">
+                <section class="col-4 col-6-medium col-12-xsmall">
+                    <span class="icon solid alt major fa-chart-area"></span>
+                    <h3>Ipsum sed commodo</h3>
+                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                </section>
+                <section class="col-4 col-6-medium col-12-xsmall">
+                    <span class="icon solid alt major fa-comment"></span>
+                    <h3>Eleifend lorem ornare</h3>
+                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                </section>
+                <section class="col-4 col-6-medium col-12-xsmall">
+                    <span class="icon solid alt major fa-flask"></span>
+                    <h3>Cubilia cep lobortis</h3>
+                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                </section>
+                <section class="col-4 col-6-medium col-12-xsmall">
+                    <span class="icon solid alt major fa-paper-plane"></span>
+                    <h3>Non semper interdum</h3>
+                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                </section>
+                <section class="col-4 col-6-medium col-12-xsmall">
+                    <span class="icon solid alt major fa-file"></span>
+                    <h3>Odio laoreet accumsan</h3>
+                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                </section>
+                <section class="col-4 col-6-medium col-12-xsmall">
+                    <span class="icon solid alt major fa-lock"></span>
+                    <h3>Massa arcu accumsan</h3>
+                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                </section>
+            </div>
+        </div>
+        <footer class="major">
+            <ul class="actions special">
+                <li><a href="#" class="button">Magna sed feugiat</a></li>
+            </ul>
+        </footer>
+    </div>
+</section>
 
-				<!-- Three -->
-					<section id="three" class="wrapper style3 special">
-						<div class="inner">
-							<header class="major">
-								<h2>Accumsan mus tortor nunc aliquet</h2>
-								<p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-								fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
-							</header>
-							<ul class="features">
-								<li class="icon fa-paper-plane">
-									<h3>Arcu accumsan</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon solid fa-laptop">
-									<h3>Ac Augue Eget</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon solid fa-code">
-									<h3>Mus Scelerisque</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-								</li>
-								<li class="icon solid fa-headphones-alt">
-									<h3>Mauris Imperdiet</h3>
-									<p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-
-							</ul>
-						</div>
-					</section>
-
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>ESC Association</h2>
-								<p>Subscribe today and discover new way of learning English.</p>
-							</header>
-							<ul class="actions stacked">
-								<li><a href="#" class="button fit primary">Activate</a></li>
-
-							</ul>
-						</div>
-					</section>
+<!-- Five -->
+<section id="five" class="wrapper style2 special fade">
+    <div class="container">
+        <header>
+            <h2>Magna faucibus lorem diam</h2>
+            <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+        </header>
+        <form method="post" action="#" class="cta">
+            <div class="row gtr-uniform gtr-50">
+                <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
+                <div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
+            </div>
+        </form>
+    </div>
+</section>

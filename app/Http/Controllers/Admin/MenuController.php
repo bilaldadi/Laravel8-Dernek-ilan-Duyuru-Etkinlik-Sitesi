@@ -9,6 +9,23 @@ use Illuminate\Support\Facades\DB;
 
 class MenuController extends Controller
 {
+    protected $appends=[
+        'getParentsTree'
+    ];
+
+public static function getParentsTree($menu,$title){
+
+    if ($menu->parent_id==0){
+        return $title;
+    }
+    $parent= Menu::find($menu->parent_id);
+    $title= $parent->title.'>'.$title;
+
+    return MenuController::getParentsTree($parent,$title);
+
+}
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,8 +33,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $menulist = DB::select('select * from menus');
 
+        $menulist = Menu::with('children')->get();
         return view('admin.menu', ['menulist' => $menulist]);
 
 

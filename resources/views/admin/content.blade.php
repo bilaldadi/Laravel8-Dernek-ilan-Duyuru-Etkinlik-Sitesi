@@ -59,7 +59,7 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>ParentId</th>
+                                            <th>parent</th>
                                             <th>Title</th>
                                             <th>Menu id</th>
                                             <th>Type</th>
@@ -76,9 +76,11 @@
                                      @foreach ($contentlist as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
-                                            <td>{{$rs->parent_id}}</td>
+                                            <td>
+                                                {{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs, $rs->title)}}
+                                            </td>
                                             <td>{{$rs->title}}</td>
-                                            <td>{{$rs->Menu_id}}</td>
+                                            <td>{{$rs->menu_id}}</td>
                                             <td>{{$rs->type}}</td>
                                             <td>{{$rs->description}}</td>
                                             <td>{{$rs->status}}</td>

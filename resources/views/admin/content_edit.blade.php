@@ -75,11 +75,17 @@
                         <input type="text" class="form-control form-control-user" name="user_id" value="{{$data->user_id}}">
                     </div>
 
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                        <label>Parent_id:</label>
-                        <input type="text" class="form-control form-control-user" name="parent_id" value="{{$data->parent_id}}">
-                    </div>
+                </div>
 
+                <div class="form-group row">
+                    <lable>Parent:</lable>
+                    <select class="form-control select2" name="parent_id">
+                        <option value="0" selected="selected">Main Menu</option>
+                        @foreach($contentlist as $rs)
+                            <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
+                                {{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->title)}}</option>
+                        @endforeach
+                    </select>
 
                 </div>
 
@@ -109,7 +115,7 @@
                     <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label>Image:</label>
-                        <input type="file" class="form-control form-control-user" name="image" value="{{$data->image}}">
+                        <input type="file" class="form-control form-control-user" name="image">
                         @if($data->image)
                             <img src="{{Storage::url($data->image)}}" height="60">
                         @endif
