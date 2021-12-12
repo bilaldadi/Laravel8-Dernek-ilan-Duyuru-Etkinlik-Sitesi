@@ -67,8 +67,18 @@ Route::middleware(['auth'])->prefix('admin')->group(function() {
 Route::get('/setting', [\App\Http\Controllers\Admin\SettingController::class ,'index'])->name('admin_setting');
 Route::post('/setting/update', [\App\Http\Controllers\Admin\SettingController:: class ,'update'])->name('admin_setting_update');
 
+#user
 
+Route::middleware(['auth'])->prefix('myaccount')->namespace('myaccount')->group(function() {
+
+    Route::get('/', [\App\Http\Controllers\UserController:: class ,'index'])->name('myprofile');
+
+});
+
+#Enduser
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+

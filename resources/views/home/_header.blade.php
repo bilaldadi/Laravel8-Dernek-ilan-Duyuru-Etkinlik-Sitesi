@@ -7,13 +7,12 @@
             <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
                 <li>
-                    <a href="#">Menu</a>
-                    <ul>
+                    <a href="#">Menus</a>
+                    <ul class="@if(!isset($page)) show-on-click @endif" >
 
                         @php
                             $parentMenu= \App\Http\Controllers\HomeController::menulist()
                         @endphp
-                        <li>
 
 
                                 @foreach($parentMenu as $rs)
@@ -31,14 +30,11 @@
 
                                 @endforeach
 
-
-
-
                     </ul>
-                </li>
+
                 <li><a href="elements.html">Elements</a></li>
                 @auth
-                    <li> {{Auth::user()->name}}</li>
+                    <li><a href="{{route('myprofile')}}"> {{Auth::user()->name}} </a></li>
                     <li><a href="{{route('admin_logout')}}">Log out</a></li>
                 @endauth
                 @guest
