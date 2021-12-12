@@ -144,6 +144,7 @@
                     <div class="col-sm-6">
                         <label>Contact:</label>
                         <input type="text" class="form-control form-control-user"  name="contact"  value="{{$data->contact}}">
+
                     </div>
 
                 </div>

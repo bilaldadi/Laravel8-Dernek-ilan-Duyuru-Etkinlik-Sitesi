@@ -32,7 +32,9 @@
 
                     </ul>
 
-                <li><a href="elements.html">Elements</a></li>
+                <li><a href="{{route('aboutus')}}">About Us</a></li>
+                <li><a href="{{route('references')}}">References</a></li>
+                <li><a href="{{route('contact')}}">Contact</a></li>
                 @auth
                     <li><a href="{{route('myprofile')}}"> {{Auth::user()->name}} </a></li>
                     <li><a href="{{route('admin_logout')}}">Log out</a></li>

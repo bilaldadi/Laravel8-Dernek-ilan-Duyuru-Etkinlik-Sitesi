@@ -32,7 +32,7 @@
                         <h3>User Panel</h3>
 
                         <footer>
-                            <ul>
+                            <ul class="list-links">
                                 <li><a href="{{route('myprofile')}}" >My Profile</a></li>
                                 <li><a href="#" >Content</a></li>
                                 <li><a href="#" >Activities</a></li>
@@ -45,7 +45,7 @@
                     <hr/>
 
                 </div>
-
+            <div class="col-8 col-12-medium imp-medium">
 
                 <!-- Content -->
                 <section id="content">

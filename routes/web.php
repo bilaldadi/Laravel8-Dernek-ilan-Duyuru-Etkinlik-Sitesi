@@ -18,6 +18,16 @@ Route::get('/', function () {
     return view('home.index');
 })->name('home');
 
+
+Route::get('/aboutus', [HomeController:: class ,'aboutus'])-> name('aboutus');
+Route::get('/references', [HomeController:: class ,'references'])-> name('references');
+Route::get('/contact', [HomeController:: class ,'contact'])-> name('contact');
+
+
+
+
+
+
 Route::get('/admin', [\App\Http\Controllers\Admin\HomeController:: class ,'index'])-> name('admin_home')->middleware('auth');
 
 Route::get('/admin/login', [HomeController:: class ,'login'])-> name('admin_login');
@@ -77,12 +87,12 @@ Route::middleware(['auth'])->prefix('myaccount')->namespace('myaccount')->group(
 
 #Enduser
 
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('home.index');
+    return view('dashboard');
 })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/home', function () {
-    return view('home.index');
-})->name('home');
+
 
 
