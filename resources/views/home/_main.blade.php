@@ -79,48 +79,30 @@
 <section id="four" class="wrapper style1 special fade-up">
     <div class="container">
         <header class="major">
-            <h2>Accumsan sed tempus adipiscing blandit</h2>
-            <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+            <h2>How we are going to improve our English? </h2>
+            <p>Let me explain to you ;)</p>
         </header>
         <div class="box alt">
             <div class="row gtr-uniform">
                 <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-chart-area"></span>
-                    <h3>Ipsum sed commodo</h3>
-                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    <span class="icon solid alt major fa-chalkboard-teacher"></span>
+                    <h3>Speak any time you want</h3>
+                    <p>we offer an opportunity to speak with native speakers at any time you like .</p>
                 </section>
                 <section class="col-4 col-6-medium col-12-xsmall">
                     <span class="icon solid alt major fa-comment"></span>
-                    <h3>Eleifend lorem ornare</h3>
-                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    <h3>Get adviced </h3>
+                    <p> its important to get adviced by the native peopel.</p>
                 </section>
                 <section class="col-4 col-6-medium col-12-xsmall">
                     <span class="icon solid alt major fa-flask"></span>
-                    <h3>Cubilia cep lobortis</h3>
-                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                    <h3>Experience New Things</h3>
+                    <p>With meeting new peopel and learning new Language you will experience alot of new things with us .</p>
                 </section>
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-paper-plane"></span>
-                    <h3>Non semper interdum</h3>
-                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                </section>
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-file"></span>
-                    <h3>Odio laoreet accumsan</h3>
-                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                </section>
-                <section class="col-4 col-6-medium col-12-xsmall">
-                    <span class="icon solid alt major fa-lock"></span>
-                    <h3>Massa arcu accumsan</h3>
-                    <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
-                </section>
+
             </div>
         </div>
-        <footer class="major">
-            <ul class="actions special">
-                <li><a href="#" class="button">Magna sed feugiat</a></li>
-            </ul>
-        </footer>
+
     </div>
 </section>
 
@@ -128,14 +110,22 @@
 <section id="five" class="wrapper style2 special fade">
     <div class="container">
         <header>
-            <h2>Magna faucibus lorem diam</h2>
-            <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+            @auth
+                <h2> We are Lucky to have you {{Auth::user()->name}}</h2>
         </header>
-        <form method="post" action="#" class="cta">
-            <div class="row gtr-uniform gtr-50">
-                <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
-                <div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
+
+        <div>
+            <a href="/myaccount" class="button">My Account</a>
+        </div>
+            @endauth
+            @guest
+            <h2>So get started Today and Sign up</h2>
+
+        </header>
+
+            <div>
+                 <a href="/register" class="button">Sign up</a>
             </div>
-        </form>
+        @endguest
     </div>
 </section>

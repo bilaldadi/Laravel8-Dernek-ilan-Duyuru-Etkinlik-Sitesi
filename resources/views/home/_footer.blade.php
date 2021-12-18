@@ -9,7 +9,7 @@
 
     </ul>
     <ul class="copyright">
-        <li>&copy; Untitled. All rights reserved.</li>
+        <li>&copy; ESC Association. All rights reserved.</li>
     </ul>
 </footer>
 
