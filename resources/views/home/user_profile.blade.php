@@ -24,7 +24,7 @@
 
         </header>
         <div class="row gtr-150">
-            <div class="col-4 col-12-medium">
+            <div class="col-2 col-12-medium">
 
                 <!-- Sidebar -->
                 <section id="sidebar">
@@ -45,7 +45,7 @@
                     <hr/>
 
                 </div>
-            <div class="col-8 col-12-medium imp-medium">
+            <div class="col-10 col-12-medium imp-medium">
 
                 <!-- Content -->
                 <section id="content">

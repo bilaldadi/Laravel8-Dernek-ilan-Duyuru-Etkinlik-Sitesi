@@ -37,51 +37,33 @@
             <header class="major">
                 <h2>Contact Us Form</h2>
 
+
             </header>
 
 
             <!-- Form -->
             <section>
                 <h3>Form</h3>
-                <form method="post" action="#">
+                @include('home.message')
+                <form method="post" action="{{route('sendmessage')}}">
+                    @csrf
                     <div class="row gtr-uniform gtr-50">
                         <div class="col-6 col-12-xsmall">
-                            <input type="text" name="name" id="name" value="" placeholder="Name" />
+                            <input type="text" name="name" id="name" value="" placeholder="Name" style="color: white"/>
                         </div>
                         <div class="col-6 col-12-xsmall">
-                            <input type="email" name="email" id="email" value="" placeholder="Email" />
+                            <input type="email" name="email" id="email" value="" placeholder="Email"style="color: white" />
                         </div>
+                        <div class="col-6 col-12-xsmall">
+                            <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" style="color: white"/>
+                        </div>
+
+                        <div class="col-6 col-12-xsmall">
+                            <input type="text" name="subject" id="subject" value="" placeholder="subject" style="color: white" />
+                        </div>
+
                         <div class="col-12">
-                            <select name="category" id="category">
-                                <option value="">- Category -</option>
-                                <option value="1">Manufacturing</option>
-                                <option value="1">Shipping</option>
-                                <option value="1">Administration</option>
-                                <option value="1">Human Resources</option>
-                            </select>
-                        </div>
-                        <div class="col-4 col-12-medium">
-                            <input type="radio" id="priority-low" name="priority" checked>
-                            <label for="priority-low">Low Priority</label>
-                        </div>
-                        <div class="col-4 col-12-medium">
-                            <input type="radio" id="priority-normal" name="priority">
-                            <label for="priority-normal">Normal Priority</label>
-                        </div>
-                        <div class="col-4 col-12-medium">
-                            <input type="radio" id="priority-high" name="priority">
-                            <label for="priority-high">High Priority</label>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <input type="checkbox" id="copy" name="copy">
-                            <label for="copy">Email me a copy of this message</label>
-                        </div>
-                        <div class="col-6 col-12-medium">
-                            <input type="checkbox" id="human" name="human" checked>
-                            <label for="human">I am a human and not a robot</label>
-                        </div>
-                        <div class="col-12">
-                            <textarea name="message" id="message" placeholder="Enter your message" rows="6"></textarea>
+                            <textarea name="message" id="message" placeholder="Enter your message" rows="6" style="color: white"></textarea>
                         </div>
                         <div class="col-12">
                             <ul class="actions">

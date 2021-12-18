@@ -51,7 +51,7 @@
                      <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Contant DataTable</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -59,7 +59,6 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>parent</th>
                                             <th>Title</th>
                                             <th>Menu id</th>
                                             <th>Type</th>
@@ -76,9 +75,6 @@
                                      @foreach ($contentlist as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
-                                            <td>
-                                                {{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs, $rs->title)}}
-                                            </td>
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->menu_id}}</td>
                                             <td>{{$rs->type}}</td>
@@ -86,15 +82,17 @@
                                             <td>{{$rs->status}}</td>
                                             <td>
                                                 @if ($rs->image)
-                                                    <img src="{{Storage::url($rs->image)}}" height="30">
+                                                    <img src="{{Storage::url($rs->image)}}" height="80">
                                                 @endif
                                             </td>
-                                            <td><a href="{{route('admin_image_add',['content_id' =>$rs->id])}}"><i class="far fa-images"></i></a></td>
+                                            <td><a href="{{route('admin_image_add',['content_id' =>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left =100 width=1100,height=700')">
+                                                    <i class="far fa-images"></i></a>
+                                            </td>
 
                                             <td><a href="{{ route('admin_content_edit',['id' =>$rs->id])}}"> <i class="far fa-edit"></i></a></td>
                                             <td> <a href="{{ route('admin_content_delete' ,['id' =>$rs->id])}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-circle btn-lg">
                                                     <i class="far fa-trash-alt"></i>
-                                    </a></td>
+                                            </a></td>
                                         </tr>
                                         @endforeach
                                      </tbody>

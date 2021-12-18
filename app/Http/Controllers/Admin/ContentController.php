@@ -51,7 +51,6 @@ class ContentController extends Controller
     public function create(Request $request)
     {
 
-
         DB::table('contents')->insert([
             'title' => $request->input('title'),
             'parent_id' => $request->input('parent_id'),

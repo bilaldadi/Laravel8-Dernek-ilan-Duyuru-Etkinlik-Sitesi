@@ -22,6 +22,7 @@ Route::get('/', function () {
 Route::get('/aboutus', [HomeController:: class ,'aboutus'])-> name('aboutus');
 Route::get('/references', [HomeController:: class ,'references'])-> name('references');
 Route::get('/contact', [HomeController:: class ,'contact'])-> name('contact');
+Route::post('/sendmessage', [HomeController:: class ,'sendmessage'])-> name('sendmessage');
 
 
 
@@ -38,11 +39,14 @@ Route::middleware(['auth'])->prefix('admin')->group(function() {
 
 Route::get('/', [\App\Http\Controllers\Admin\HomeController:: class ,'index'])->name('admin_home');
 
-Route::get('/menu', [\App\Http\Controllers\Admin\MenuController:: class ,'index'])->name('admin_menu');
-Route::get('/menu/add', [\App\Http\Controllers\Admin\MenuController:: class ,'add'])->name('admin_menu_add');
-Route::get('/menu/update', [\App\Http\Controllers\Admin\MenuController:: class ,'update'])->name('admin_menu_update');
-Route::get('/menu/delete', [\App\Http\Controllers\Admin\MenuController:: class ,'destroy'])->name('admin_menu_delete');
-Route::get('/menu/show', [\App\Http\Controllers\Admin\MenuController:: class ,'show'])->name('admin_menu_show');
+    Route::get('/menu', [\App\Http\Controllers\Admin\MenuController:: class ,'index'])->name('admin_menu');
+    Route::post('/menu/store', [\App\Http\Controllers\Admin\MenuController:: class ,'store'])->name('admin_menu_store');
+    Route::get('/menu/add', [\App\Http\Controllers\Admin\MenuController:: class ,'add'])->name('admin_menu_add');
+    Route::post('/menu/create', [\App\Http\Controllers\Admin\MenuController:: class ,'create'])->name('admin_menu_create');
+    Route::post('/menu/update/{id}', [\App\Http\Controllers\Admin\MenuController:: class ,'update'])->name('admin_menu_update');
+    Route::get('/menu/edit/{id}', [\App\Http\Controllers\Admin\MenuController:: class ,'edit'])->name('admin_menu_edit');
+    Route::get('/menu/delete/{id}', [\App\Http\Controllers\Admin\MenuController:: class ,'destroy'])->name('admin_menu_delete');
+    Route::get('/menu/show', [\App\Http\Controllers\Admin\MenuController:: class ,'show'])->name('admin_menu_show');
 
 });
 
@@ -86,6 +90,21 @@ Route::middleware(['auth'])->prefix('myaccount')->namespace('myaccount')->group(
 });
 
 #Enduser
+
+
+#Messsages
+
+Route::prefix('message')->group(function (){
+
+    Route::get('/', [\App\Http\Controllers\Admin\MessageController:: class ,'index'])->name('admin_message');
+    Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController:: class ,'edit'])->name('admin_message_edit');
+    Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController:: class ,'update'])->name('admin_message_update');
+    Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController:: class ,'destroy'])->name('admin_message_delete');
+    Route::get(' show', [\App\Http\Controllers\Admin\MessageController:: class ,'show'])->name('admin_message_show');
+
+});
+
+#End Messages
 
 
 

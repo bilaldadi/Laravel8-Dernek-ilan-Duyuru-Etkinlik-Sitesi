@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Content;
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -46,9 +49,30 @@ public static function getParentsTree($menu,$title){
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        DB::table('menus')->insert([
+            'title' => $request->input('title'),
+            'parent_id' => $request->input('parent_id'),
+            'keywords' => $request->input('keywords'),
+            'description' => $request->input('description'),
+            'status' => $request->input('status'),
+            'image' => $request->input('image')
+
+        ]);
+
+        return redirect()->route('admin_menu');
+    }
+
+
+
+
+
+    public function add()
+    {
+        $menulist = DB::select('select * from menus');
+
+        return view('admin.menu_add', ['contentlist' =>$menulist]);
     }
 
     /**
@@ -59,7 +83,17 @@ public static function getParentsTree($menu,$title){
      */
     public function store(Request $request)
     {
-        //
+        $data= new Menu;
+
+        $data->parent_id= $request->input('parent_id');
+        $data->title= $request->input('title');
+        $data->keywords= $request->input('keywords');
+        $data->description= $request->input('description');
+        $data->image= Storage::putFile('images',$request->file('image'));
+        $data->status= $request->input('status');
+
+        $data->save();
+        return redirect()->route('admin_menu');
     }
 
     /**
@@ -81,7 +115,10 @@ public static function getParentsTree($menu,$title){
      */
     public function edit($id)
     {
-        //
+        $data = Menu::find($id);
+        $menulist = DB::table('menus')->where('parent_id',0)->get();
+
+        return view('admin.menu_edit',['data'=>$data ,'menulist'=>$menulist]);
     }
 
     /**
@@ -91,9 +128,20 @@ public static function getParentsTree($menu,$title){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id, Menu $menu )
     {
-        //
+        $data= Menu::find($id);
+
+        $data->parent_id= $request->input('parent_id');
+        $data->title = $request->input('title');
+        $data->keywords = $request->input('keywords');
+        $data->description = $request->input('description');
+        $data->status = $request->input('status');
+        if ($request->file('image')!=null){
+            $data->image= Storage::putFile('images',$request->file('image'));
+        }
+        $data->save();
+        return redirect()->route('admin_menu');
     }
 
     /**
@@ -104,6 +152,7 @@ public static function getParentsTree($menu,$title){
      */
     public function destroy($id)
     {
-        //
+        DB::table('menus')->where('id','=', $id)->delete();
+        return redirect()->route('admin_menu');
     }
 }

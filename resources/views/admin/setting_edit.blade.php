@@ -149,14 +149,6 @@
 
                 </div>
 
-                <div class="form-group row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                        <label>References:</label>
-                        <input type="text" class="form-control form-control-user" name="references" value="{{$data->references}}">
-                    </div>
-
-
-                </div>
 
 
                 <div class="form-group row">

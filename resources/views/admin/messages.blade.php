@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>ESC Association Admin</title>
+    <title>ESC Content messages Admin</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('pi')}}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,25 +31,24 @@
 
         @include('admin._sidebar')
 
-               @include('admin._header')
+                 @include('admin._header')
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Menu Page</h1>
+                    <h1 class="h3 mb-4 text-gray-800">Messages Page</h1>
 
-                    <a href="{{ route('admin_menu_add')}}" class="btn btn-primary btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-flag"></i>
-                                        </span>
-                        <span class="text">Add New Menu</span>
-                    </a>
+                    <div class="card-header">
+                        @include('home.message')
+                    </div>
+
+
 
                      <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Menu DataTable</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"> Messages DataTable</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -57,33 +56,34 @@
                                     <thead>
                                         <tr>
                                             <th>Id</th>
-                                            <th>Parent Id</th>
-                                            <th>Title</th>
-                                            <th>Discription</th>
-                                            <th>Image</th>
+                                            <th>name</th>
+                                            <th>email</th>
+                                            <th>phone</th>
+                                            <th>subject</th>
+                                            <th>message</th>
                                             <th>Status</th>
-                                             <th>Edit</th>
+                                            <th>Admin Note</th>
+                                            <th>Edit</th>
                                             <th>Delete</th>
 
                                         </tr>
                                     </thead>
                                      <tbody>
-                                     @foreach ($menulist as $rs)
+                                     @foreach ($datalist as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
-                                            <td>{{$rs->parent_id}}</td>
-                                            <td>{{$rs->title}}</td>
-                                            <td>{{$rs->description}}</td>
-                                            <td>
-                                                @if ($rs->image)
-                                                    <img src="{{Storage::url($rs->image)}}" height="90">
-                                                @endif
-                                            </td>
+                                            <td>{{$rs->name}}</td>
+                                            <td>{{$rs->email}}</td>
+                                            <td>{{$rs->phone}}</td>
+                                            <td>{{$rs->subject}}</td>
+                                            <td>{{$rs->message}}</td>
                                             <td>{{$rs->status}}</td>
-                                            <td><a href="{{ route('admin_menu_edit',['id' =>$rs->id])}}"> <i class="far fa-edit"></i></a></td>
-                                            <td> <a href="{{ route('admin_menu_delete' ,['id' =>$rs->id])}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-circle btn-lg">
+                                            <td>{{$rs->ip}}</td>
+
+                                            <td><a href="{{ route('admin_message_edit',['id' =>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left =100 width=1100,height=700')"> <i class="far fa-edit"></i></a></td>
+                                            <td> <a href="{{ route('admin_message_delete' ,['id' =>$rs->id])}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-circle btn-lg">
                                                     <i class="far fa-trash-alt"></i>
-                                                </a></td>
+                                    </a></td>
                                         </tr>
                                         @endforeach
                                      </tbody>

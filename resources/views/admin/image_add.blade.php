@@ -29,7 +29,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        @include('admin._sidebar')
+
 
        @include('admin._header')
 
