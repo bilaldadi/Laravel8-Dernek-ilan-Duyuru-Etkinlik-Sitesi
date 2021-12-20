@@ -46,6 +46,16 @@
                             <form class="user" action="{{ route('admin_menu_create') }}" method="post" enctype="multipart/form-data" >
                             @csrf
                                 <div class="form-group row">
+
+                                    <label>Parent Menu</label>
+                                    <select class="form-control select2" name="parent_id">
+                                        <option value="0" selected="selected">Main Menu</option>
+                                        @foreach($menulist as $rs)
+                                            <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->title)}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" name="title" placeholder="Title">
                                     </div>
@@ -60,9 +70,7 @@
                                         <input type="text" class="form-control form-control-user" name="description" placeholder="description">
                                     </div>
 
-                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                         <input type="text" class="form-control form-control-user" name="parent_id" placeholder="parent_id">
-                                     </div>
+
 
                                 </div>
 

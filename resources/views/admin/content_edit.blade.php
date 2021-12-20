@@ -63,8 +63,8 @@
                         <input type="text" class="form-control form-control-user" name="description" value="{{$data->description}}">
                     </div>
                     <div class="col-sm-6">
-                        <label>Menu id:</label>
-                        <input type="text" class="form-control form-control-user"  name="Menu_id"  value="{{$data->Menu_id}}">
+                        <label>parent id:</label>
+                        <input type="text" class="form-control form-control-user"  name="parent_id"  value="{{$data->parent_id}}">
                     </div>
 
                 </div>
@@ -79,7 +79,7 @@
 
                 <div class="form-group row">
                     <lable>Parent:</lable>
-                    <select class="form-control select2" name="parent_id">
+                    <select class="form-control select2" name="menu_id">
                         <option value="0" selected="selected">Main Menu</option>
                         @foreach($contentlist as $rs)
                             <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>

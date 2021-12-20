@@ -45,6 +45,20 @@
             </div>
             <form class="user" action="{{ route('admin_menu_update',['id'=>$data->id]) }}" method="post" enctype="multipart/form-data" >
                 @csrf
+
+                <div class="form-group row">
+
+                    <label>Parent Menu</label>
+                    <select class="form-control select2" name="parent_id">
+                        <option value="0" selected="selected">Main Menu</option>
+                        @foreach($menulist as $rs)
+                            <option value="{{$rs->id}}" @if($rs->id==$data->parent_id) selected="selected" @endif>
+                                {{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->title)}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+
                 <div class="form-group row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label>Title:</label>
@@ -62,10 +76,7 @@
                         <label>Description:</label>
                         <input type="text" class="form-control form-control-user" name="description" value="{{$data->description}}">
                     </div>
-                    <div class="col-sm-6">
-                        <label>Parent Id:</label>
-                        <input type="text" class="form-control form-control-user"  name="parent_id"  value="{{$data->parent_id}}">
-                    </div>
+
 
                 </div>
 

@@ -46,6 +46,18 @@
                             <form class="user" action="{{ route('admin_content_create') }}" method="post" enctype="multipart/form-data" >
                             @csrf
                                 <div class="form-group row">
+
+                                    <label>Parent Menu</label>
+                                    <select class="form-control select2" name="menu_id">
+                                        <option value="0" selected="selected">Main Menu</option>
+                                        @foreach($contentlist as $rs)
+                                            <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->title)}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+
+                                <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" name="title" placeholder="Title">
                                     </div>
@@ -60,7 +72,7 @@
                                         <input type="text" class="form-control form-control-user" name="description" placeholder="description">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user"  name="Menu_id"  placeholder="menu id">
+                                        <input type="text" class="form-control form-control-user"  name="parent_id"  placeholder="parent id">
                                     </div>
 
                                 </div>
@@ -71,15 +83,6 @@
                                     </div>
                                   </div>
 
-                                <div class="form-group row">
-                                      <select class="form-control select2" name="parent_id">
-                                          <option value="0" selected="selected">Main Menu</option>
-                                          @foreach($contentlist as $rs)
-                                              <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->title)}}</option>
-                                          @endforeach
-                                      </select>
-
-                                </div>
 
 
 

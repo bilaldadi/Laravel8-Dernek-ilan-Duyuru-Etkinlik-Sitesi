@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use App\Models\Menu;
 use App\Models\Message;
 use App\Models\Setting;
@@ -37,6 +38,14 @@ class HomeController extends Controller
 
         $setting= Setting::first();
         return view('home.contact',['setting'=>$setting]);
+
+    }
+
+    public function menucontents($id,$description){
+
+       $datalist=Content::where('menu_id',$id)->get();
+       $data= Menu::find($id);
+        return view('home.menu_contents',['data'=>$data,'datalist'=>$datalist]);
 
     }
 

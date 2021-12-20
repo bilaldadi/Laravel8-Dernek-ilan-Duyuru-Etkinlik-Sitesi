@@ -1,13 +1,13 @@
 @foreach($children as $submenu)
-    <ul>
-        @if(count($submenu->$children))
+
+        @if(count($submenu->children))
             <li>{{$submenu->title}}</li>
-            <ul>
-                @include('$home.menutree',['children'=>$submenu->$children])
-            </ul>
+
+                @include('$home.menutree',['children'=>$submenu->children])
+
             <hr>
         @else
-        <li><a href="#">{{$submenu->title}}</a></li>
+        <li><a href="{{route('menucontents',['id'=>$submenu->id, 'description'=>$submenu->description])}}">{{$submenu->title}}</a></li>
         @endif
-    </ul>
+
 @endforeach

@@ -57,7 +57,7 @@ class ContentController extends Controller
             'keywords' => $request->input('keywords'),
             'description' => $request->input('description'),
             'status' => $request->input('status'),
-            'Menu_id'=> $request->input('Menu_id'),
+            'menu_id'=> $request->input('menu_id'),
             'user_id' => $request->input('user_id'),
             'type' => $request->input('type'),
             'image' => $request->input('image')
@@ -76,7 +76,7 @@ class ContentController extends Controller
      */
     public function add()
     {
-        $contentlist = DB::select('select * from contents');
+        $contentlist = Menu::with('children')->get();
 
         return view('admin.Content_add', ['contentlist' =>$contentlist]);
     }
@@ -97,8 +97,7 @@ class ContentController extends Controller
         $data->description= $request->input('description');
         $data->image= Storage::putFile('images',$request->file('image'));
         $data->status= $request->input('status');
-        $data->Menu_id= $request->input('Menu_id');
-        $data->Menu_id= $request->input('user_id');
+        $data->menu_id= $request->input('menu_id');
         $data->type= $request->input('type');
         $data->user_id= Auth::id();
 
@@ -126,7 +125,7 @@ class ContentController extends Controller
     public function edit($id)
     {
         $data = Content::find($id);
-        $contentlist = DB::table('contents')->where('parent_id',0)->get();
+        $contentlist = Menu::with('children')->get();
 
         return view('admin.content_edit',['data'=>$data ,'contentlist'=>$contentlist]);
     }
@@ -148,8 +147,8 @@ class ContentController extends Controller
             $data->description = $request->input('description');
             $data->status = $request->input('status');
             $data->type = $request->input('type');
-            $data->menu_id = $request->input('Menu_id');
-            $data->menu_id = $request->input('user_id');
+            $data->menu_id = $request->input('menu_id');
+            $data->user_id = $request->input('user_id');
             if ($request->file('image')!=null){
                 $data->image= Storage::putFile('images',$request->file('image'));
             }

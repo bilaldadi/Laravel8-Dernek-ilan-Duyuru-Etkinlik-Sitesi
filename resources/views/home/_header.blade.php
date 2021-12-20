@@ -6,31 +6,9 @@
         <nav id="nav">
             <ul>
                 <li><a href="{{ route('home') }}">Home</a></li>
-                <li>
-                    <a href="#">Menus</a>
-                    <ul class="@if(!isset($page)) show-on-click @endif" >
 
-                        @php
-                            $parentMenu= \App\Http\Controllers\HomeController::menulist()
-                        @endphp
+                @include('home._menu')
 
-
-                                @foreach($parentMenu as $rs)
-
-
-                                    <li>
-                                        <a href="{{route('home')}}">
-                                            {{$rs->title}}
-                                            @if(count($rs->children))
-                                                @include('home.menutree',['children'=>$rs->children])
-                                            @endif
-                                        </a>
-                                    </li>
-
-
-                                @endforeach
-
-                    </ul>
 
                 <li><a href="{{route('aboutus')}}">About Us</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>

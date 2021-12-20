@@ -70,9 +70,9 @@ public static function getParentsTree($menu,$title){
 
     public function add()
     {
-        $menulist = DB::select('select * from menus');
+        $menulist = Menu::with('children')->get();
 
-        return view('admin.menu_add', ['contentlist' =>$menulist]);
+        return view('admin.menu_add', ['menulist' =>$menulist]);
     }
 
     /**
@@ -116,7 +116,7 @@ public static function getParentsTree($menu,$title){
     public function edit($id)
     {
         $data = Menu::find($id);
-        $menulist = DB::table('menus')->where('parent_id',0)->get();
+        $menulist = Menu::with('children')->get();
 
         return view('admin.menu_edit',['data'=>$data ,'menulist'=>$menulist]);
     }
