@@ -24,7 +24,7 @@ Route::get('/references', [HomeController:: class ,'references'])-> name('refere
 Route::get('/contact', [HomeController:: class ,'contact'])-> name('contact');
 Route::post('/sendmessage', [HomeController:: class ,'sendmessage'])-> name('sendmessage');
 Route::get('/menucontents/{id}/{description}', [HomeController:: class ,'menucontents'])-> name('menucontents');
-
+Route::get('/content/{id}/{title}', [HomeController:: class ,'content'])-> name('content');
 
 
 

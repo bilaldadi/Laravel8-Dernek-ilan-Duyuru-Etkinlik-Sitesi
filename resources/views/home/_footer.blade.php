@@ -20,6 +20,32 @@
 <script src="{{asset('assets')}}/js/jquery.scrolly.min.js"></script>
 <script src="{{asset('assets')}}/js/jquery.dropotron.min.js"></script>
 <script src="{{asset('assets')}}/js/jquery.scrollex.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $(".Modern-Slider").slick({
+            autoplay:true,
+            autoplaySpeed:10000,
+            speed:900,
+            slidesToShow:1,
+            slidesToScroll:1,
+            pauseOnHover:false,
+            dots:true,
+            pauseOnDotsHover:true,
+            cssEase:'linear',
+            fade:true,
+            draggable:false,
+            prevArrow:'<button class="PrevArrow"></button>',
+            nextArrow:'<button class="NextArrow"></button>',
+        });
+
+    })
+</script>
+
+
 <script src="{{asset('assets')}}/js/browser.min.js"></script>
 <script src="{{asset('assets')}}/js/breakpoints.min.js"></script>
 <script src="{{asset('assets')}}/js/util.js"></script>

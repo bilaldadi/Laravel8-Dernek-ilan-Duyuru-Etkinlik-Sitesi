@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\Image;
 use App\Models\Menu;
 use App\Models\Message;
 use App\Models\Setting;
@@ -46,6 +47,15 @@ class HomeController extends Controller
        $datalist=Content::where('menu_id',$id)->get();
        $data= Menu::find($id);
         return view('home.menu_contents',['data'=>$data,'datalist'=>$datalist]);
+
+    }
+
+    public function content($id,$title){
+
+
+        $data= Content::find($id);
+        $datalist=Image::where('content_id',$id)->get();
+        return view('home.content_detail',['data'=>$data,'datalist'=>$datalist]);
 
     }
 
