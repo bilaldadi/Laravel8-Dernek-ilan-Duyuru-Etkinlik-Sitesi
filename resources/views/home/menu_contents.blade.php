@@ -35,7 +35,7 @@
                 <tr>
                     <th>Date</th>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th>Keywords</th>
                     <th>Details</th>
 
                 </tr>
@@ -45,7 +45,7 @@
                 <tr>
                     <td>{{$rs->updated_at}}</td>
                     <td>{{$rs->title}}</td>
-                    <td>{{$rs->description}}</td>
+                    <td>{{$rs->keywords}}</td>
                     <td>
                         <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}" class="button small fit">Details</a>
                     </td>

@@ -98,7 +98,7 @@
                 <div class="form-group row">
                     <lable>Parent:</lable>
                     <select class="form-control select2" name="menu_id">
-                        <option value="0" selected="selected">Main Menu</option>
+                        <option value="{{$data->menu_id}}" selected="selected">Main Menu</option>
                         @foreach($contentlist as $rs)
                             <option value="{{$rs->id}}" @if($rs->id == $data->parent_id) selected="selected" @endif>
                                 {{\App\Http\Controllers\Admin\MenuController::getParentsTree($rs,$rs->title)}}</option>
