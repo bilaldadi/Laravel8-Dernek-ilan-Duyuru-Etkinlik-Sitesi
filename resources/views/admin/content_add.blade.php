@@ -21,6 +21,17 @@
     <link href="{{asset('pi')}}/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="{{asset('pi')}}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+
+
 </head>
 
 
@@ -67,21 +78,31 @@
 
                                 </div>
 
-                                 <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" name="description" placeholder="description">
-                                    </div>
+                                <div class="form-group row">
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control form-control-user"  name="parent_id"  placeholder="parent id">
                                     </div>
 
-                                </div>
-
-                                  <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" name="user_id" placeholder="User id">
                                     </div>
-                                  </div>
+                                </div>
+
+                                 <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <textarea id="summernote" name="description"></textarea>
+
+                                        <script>
+                                            $('#summernote').summernote({
+                                                placeholder: 'Description',
+                                                tabsize: 2,
+                                                height: 100
+                                            });
+                                        </script>
+
+                                    </div>
+                                 </div>
+
 
 
 
@@ -95,20 +116,18 @@
                                             <option value="News">News</option>
                                         </select>
                                      </div>
-                                     </div>
 
-                                      <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                       <label for="cars">status:</label>
-                                          <select class="form-control select2" id="type" name="status" class="animated--grow-in">
+                                        <label for="cars">status:</label>
+                                        <select class="form-control select2" id="type" name="status" class="animated--grow-in">
                                             <option value="True">True</option>
                                             <option value="False">False</option>
 
                                         </select>
+                                    </div>
                                      </div>
 
 
-                                </div>
                                 <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <input type="file" class="form-control form-control-user" name="image">
