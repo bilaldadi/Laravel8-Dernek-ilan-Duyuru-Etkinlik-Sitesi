@@ -55,7 +55,7 @@
                             </div>
                             <div class="down-content">
 
-                                <p class="description">
+                                <p>
                                     {{$setting->aboutus}}
                                 </p>
 

@@ -75,8 +75,9 @@
                                 @endif
                                 <div class="down-content">
                                     <div class="date">
-                                        <h6>Nov <span>12</span></h6>
+                                        <h6>{{$rs->updated_at}}</h6>
                                     </div>
+                                    <br>
                                     <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><h4>{{$rs->title}}</h4></a>
 
                                 </div>
@@ -97,8 +98,9 @@
                                     @endif
                                     <div class="down-content">
                                         <div class="date">
-                                            <h6>Nov <span>12</span></h6>
+                                            <h6>{{$rs->updated_at}}</h6>
                                         </div>
+                                        <br>
                                         <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><h4>{{$rs->title}}</h4></a>
 
                                     </div>
@@ -119,8 +121,9 @@
                                     @endif
                                     <div class="down-content">
                                         <div class="date">
-                                            <h6>Nov <span>12</span></h6>
+                                            <h6>{{$rs->updated_at}}</h6>
                                         </div>
+                                        <br>
                                         <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><h4>{{$rs->title}}</h4></a>
 
                                     </div>
