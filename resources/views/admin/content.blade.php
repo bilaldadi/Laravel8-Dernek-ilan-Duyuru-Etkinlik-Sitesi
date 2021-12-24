@@ -63,7 +63,7 @@
                                             <th>Title</th>
                                             <th>Menu</th>
                                             <th>Type</th>
-                                            <th>description</th>
+                                            <th>Keywords</th>
                                             <th>Status</th>
                                             <th>Image</th>
                                             <th>Image Gallery</th>
@@ -82,11 +82,11 @@
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->menu->title}}</td>
                                             <td>{{$rs->type}}</td>
-                                            <td>{{$rs->description}}</td>
+                                            <td>{{$rs->keywords}}</td>
                                             <td>{{$rs->status}}</td>
                                             <td>
                                                 @if ($rs->image)
-                                                    <img src="{{Storage::url($rs->image)}}" height="80">
+                                                    <img src="{{Storage::url($rs->image)}}" height="40">
                                                 @endif
                                             </td>
                                             <td><a href="{{route('admin_image_add',['content_id' =>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left =100 width=1100,height=700')">

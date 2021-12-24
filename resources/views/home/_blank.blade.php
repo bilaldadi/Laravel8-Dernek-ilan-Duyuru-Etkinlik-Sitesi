@@ -1,50 +1,116 @@
-<!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>ESC Association</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education Template - Meeting Detail Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <!--
+
+    TemplateMo 569 Edu Meeting
+
+    https://templatemo.com/tm-569-edu-meeting
+
+    -->
 </head>
-<body class="is-preload landing">
+<body>
 
 @include('home._header')
 
-<!-- Main -->
-<div id="main" class="wrapper style1">
+<section class="heading-page header-text" id="top">
     <div class="container">
-        <header class="major">
-            <h2>No Sidebar</h2>
-            <p>Ipsum dolor feugiat aliquam tempus sed magna lorem consequat accumsan</p>
-        </header>
-
-        <!-- Content -->
-        <section id="content">
-            <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-            <h3>Dolore Amet Consequat</h3>
-            <p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at magna consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam cubilia adipiscing interdum aliquet aliquet placerat cubilia accumsan cep ante nullam adipiscing tortor odio. Iaculis adipiscing accumsan nascetur in cras. Lacinia placerat.</p>
-            <p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique faucibus magna adipiscing aliquet blandit nisi dolor accumsan nascetur lorem. Vis enim. Curae. Mi arcu vis aliquam ipsum non accumsan ac mi faucibus amet eu accumsan erat interdum semper accumsan. Eu sagittis tellus accumsan neque lorem penatibus in porttitor. Vivamus commodo curae. Condimentum lobortis praesent id ac lorem. Lorem vis ipsum dolor feugiat consequat dolore adipiscing.</p>
-            <h3>Sed Magna Ornare</h3>
-            <p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus. In accumsan lorem nunc ultrices a ac eu accumsan ac id nullam. Nec lobortis. Faucibus. Mi commodo laoreet arcu at non mi lacinia aliquet non lobortis phasellus accumsan nascetur varius. Integer orci porttitor eu faucibus aliquet faucibus ac accumsan adipiscing accumsan odio. Ut adipiscing.</p>
-            <ul>
-                <li>Faucibus orci lobortis ac adipiscing integer.</li>
-                <li>Col accumsan arcu mi aliquet placerat.</li>
-                <li>Lobortis vestibulum ut magna tempor massa nascetur.</li>
-                <li>Blandit massa non blandit tempor interdum.</li>
-                <li>Lacinia mattis arcu nascetur lobortis.</li>
-            </ul>
-        </section>
-
+        <div class="row">
+            <div class="col-lg-12">
+                <h6>Get all details</h6>
+                <h2>Online Teaching and Learning Tools</h2>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 
+<section class="meetings-page" id="meetings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="meeting-single-item">
+                            <div class="thumb">
+                                <div class="price">
+                                    <span>$14.00</span>
+                                </div>
+                                <div class="date">
+                                    <h6>Nov <span>12</span></h6>
+                                </div>
+                                <a href="meeting-details.html"><img src="assets/images/single-meeting.jpg" alt=""></a>
+                            </div>
+                            <div class="down-content">
+                                <a href="meeting-details.html"><h4>Online Teaching and Learning Tools</h4></a>
+                                <p>Recreio dos Bandeirantes, Rio de Janeiro - RJ, 22795-008, Brazil</p>
+                                <p class="description">
+                                    This is an edu meeting HTML CSS template provided by <a href="https://templatemo.com/" target="_blank" rel="nofollow">TemplateMo website</a>. This is a Bootstrap v5.1.3 layout. If you need more free website templates like this one, please visit our website TemplateMo. Please tell your friends about our website. Thank you. If you want to get the latest collection of HTML CSS templates for your websites, you may visit <a rel="nofollow" href="https://www.toocss.com/" target="_blank">Too CSS website</a>. If you need a working contact form script, please visit <a href="https://templatemo.com/contact" target="_parent">our contact page</a> for more info.
 
+                                    <br><br>You are allowed to use this edu meeting CSS template for your school or university or business. You can feel free to modify or edit this layout. You are not allowed to redistribute the template ZIP file on any other template website. Please contact us for more information.
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="hours">
+                                            <h5>Hours</h5>
+                                            <p>Monday - Friday: 07:00 AM - 13:00 PM<br>Saturday- Sunday: 09:00 AM - 15:00 PM</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="location">
+                                            <h5>Location</h5>
+                                            <p>Recreio dos Bandeirantes,
+                                                <br>Rio de Janeiro - RJ, 22795-008, Brazil</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="book now">
+                                            <h5>Book Now</h5>
+                                            <p>010-020-0340<br>090-080-0760</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="share">
+                                            <h5>Share:</h5>
+                                            <ul>
+                                                <li><a href="#">Facebook</a>,</li>
+                                                <li><a href="#">Twitter</a>,</li>
+                                                <li><a href="#">Linkedin</a>,</li>
+                                                <li><a href="#">Behance</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="main-button-red">
+                            <a href="meetings.html">Back To Meetings List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 @include('home._footer')

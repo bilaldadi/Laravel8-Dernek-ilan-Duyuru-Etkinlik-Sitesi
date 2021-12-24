@@ -27,5 +27,5 @@
     <div id="wrapper">
 
     @include('admin._sidebar')
-    @include('admin._content')
+    @include('admin._content')\
     @include('admin._footer')

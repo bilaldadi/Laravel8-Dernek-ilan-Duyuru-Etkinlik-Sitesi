@@ -1,63 +1,135 @@
-<!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>ESC Association</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="{{asset('assets')}}/css/main.css" />
-    <noscript><link rel="stylesheet" href="{{asset('assets')}}/css/noscript.css" /></noscript>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education - List of Meetings</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('vendor')}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/fontawesome.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/owl.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/lightbox.css">
+    <!--
+
+    TemplateMo 569 Edu Meeting
+
+    https://templatemo.com/tm-569-edu-meeting
+
+    -->
 </head>
-<body class="is-preload landing">
+<body>
 
 @include('home._header')
 
 <!-- Main -->
-<div id="main" class="wrapper style1">
+
+<section class="heading-page header-text" id="top">
     <div class="container">
-        <header class="major">
-            <h2>{{$data->title}}</h2>
+        <div class="row">
+            <div class="col-lg-12">
 
-        </header>
-
-        <a href="#" class="image fit"><img src="{{asset('images')}}/pic07.jpg" alt="" /></a>
-
-<section>
-
-        <div class="table-wrapper">
-            <table class="alt">
-
-                <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Name</th>
-                    <th>Keywords</th>
-                    <th>Details</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($datalist as $rs)
-                <tr>
-                    <td>{{$rs->updated_at}}</td>
-                    <td>{{$rs->title}}</td>
-                    <td>{{$rs->keywords}}</td>
-                    <td>
-                        <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}" class="button small fit">Details</a>
-                    </td>
-
-
-                </tr>
-                @endforeach
-                </tbody>
-
-            </table>
+                <h2>{{$data->title}}</h2>
+            </div>
         </div>
+    </div>
 </section>
+
+<section class="meetings-page" id="meetings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="filters">
+                            <ul>
+                                <li data-filter="*"  class="active">All Catogary</li>
+                                <li data-filter=".Announcement">Announcments</li>
+                                <li data-filter=".Activities">Activities</li>
+                                <li data-filter=".News">News</li>
+                            </ul>
+                        </div>
+                    </div>
+
+        <div class="col-lg-12">
+            <div class="row grid">
+
+                @foreach($datalist as $rs)
+                    @if ($rs->type == "Announcement")
+                        <div class="col-lg-4 templatemo-item-col all Announcement">
+                            <div class="meeting-item">
+                                @if ($rs->image)
+                                    <div class="thumb">
+                                        <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><img src="{{Storage::url($rs->image)}}" alt=""></a>
+                                    </div>
+                                @endif
+                                <div class="down-content">
+                                    <div class="date">
+                                        <h6>Nov <span>12</span></h6>
+                                    </div>
+                                    <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><h4>{{$rs->title}}</h4></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+
+
+                    @foreach($datalist as $rs)
+                        @if ($rs->type == "Activities")
+                            <div class="col-lg-4 templatemo-item-col all Activities">
+                                <div class="meeting-item">
+                                    @if ($rs->image)
+                                        <div class="thumb">
+                                            <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><img src="{{Storage::url($rs->image)}}" alt=""></a>
+                                        </div>
+                                    @endif
+                                    <div class="down-content">
+                                        <div class="date">
+                                            <h6>Nov <span>12</span></h6>
+                                        </div>
+                                        <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><h4>{{$rs->title}}</h4></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+
+
+                    @foreach($datalist as $rs)
+                        @if ($rs->type == "News")
+                            <div class="col-lg-4 templatemo-item-col all News">
+                                <div class="meeting-item">
+                                    @if ($rs->image)
+                                        <div class="thumb">
+                                            <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><img src="{{Storage::url($rs->image)}}" alt=""></a>
+                                        </div>
+                                    @endif
+                                    <div class="down-content">
+                                        <div class="date">
+                                            <h6>Nov <span>12</span></h6>
+                                        </div>
+                                        <a href="{{route('content',['id'=>$rs->id,'title'=>$rs->title])}}"><h4>{{$rs->title}}</h4></a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+
+
 
     </div>
 </div>

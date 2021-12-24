@@ -1,88 +1,168 @@
-<!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>ESC Contact</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education Template - Meeting Detail Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+    <!--
+
+    TemplateMo 569 Edu Meeting
+
+    https://templatemo.com/tm-569-edu-meeting
+
+    -->
 </head>
 <body class="is-preload landing">
 
 @include('home._header')
 
-<!-- Main -->
-<div id="main" class="wrapper style1">
+<section class="heading-page header-text" id="top">
     <div class="container">
-        <header class="major">
-            <h2>Contact Us</h2>
+        <div class="row">
+            <div class="col-lg-12">
 
-        </header>
+                <h2>Contact</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="meetings-page" id="meetings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="meeting-single-item">
+                            <div class="thumb">
+                                <img src="images/pic07.jpg" alt="">
+                            </div>
+                            <div class="down-content">
+
+                                <p class="description">
+                                    {{$setting->contact}}
+                                </p>
 
 
-        <!-- Content -->
-        <section id="content">
-            <a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-            {!! $setting->contact !!}
-
-        </section>
-
-        <section id="content">
-
-            <header class="major">
-                <h2>Contact Us Form</h2>
-
-
-            </header>
+                                <div class="col-lg-12">
+                                    <div class="share">
+                                        <h5>Share:</h5>
+                                        <ul>
+                                            <li><a href="#">Facebook</a>,</li>
+                                            <li><a href="#">Twitter</a>,</li>
+                                            <li><a href="#">Linkedin</a>,</li>
+                                            <li><a href="#">Behance</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="main-button-red">
+                        <a href="{{ route('home') }}">Back To Home Page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
             <!-- Form -->
-            <section>
-                <h3>Form</h3>
-                @include('home.message')
-                <form method="post" action="{{route('sendmessage')}}">
-                    @csrf
-                    <div class="row gtr-uniform gtr-50">
-                        <div class="col-6 col-12-xsmall">
-                            <input type="text" name="name" id="name" value="" placeholder="Name" style="color: white"/>
-                        </div>
-                        <div class="col-6 col-12-xsmall">
-                            <input type="email" name="email" id="email" value="" placeholder="Email"style="color: white" />
-                        </div>
-                        <div class="col-6 col-12-xsmall">
-                            <input type="text" name="phone" id="phone" value="" placeholder="Phone Number" style="color: white"/>
-                        </div>
-
-                        <div class="col-6 col-12-xsmall">
-                            <input type="text" name="subject" id="subject" value="" placeholder="subject" style="color: white" />
-                        </div>
-
-                        <div class="col-12">
-                            <textarea name="message" id="message" placeholder="Enter your message" rows="6" style="color: white"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <ul class="actions">
-                                <li><input type="submit" value="Send Message" class="primary" /></li>
-                                <li><input type="reset" value="Reset" /></li>
-                            </ul>
-                        </div>
+<section class="contact-us" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 align-self-center">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form id="contact" action="{{route('sendmessage')}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>Let's get in touch</h2>
+                                    @include('home.message')
+                                </div>
+                                <div class="col-lg-4">
+                                    <fieldset>
+                                        <input name="name" type="text" id="name" placeholder="YOURNAME...*" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-4">
+                                    <fieldset>
+                                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="YOUR EMAIL..." required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-4">
+                                    <fieldset>
+                                        <input name="phone" type="text" id="phone" placeholder="Phone Number" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-4">
+                                    <fieldset>
+                                        <input name="subject" type="text" id="subject" placeholder="SUBJECT...*" required="">
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <textarea name="message" type="text" class="form-control" id="message" placeholder="YOUR MESSAGE..." required=""></textarea>
+                                    </fieldset>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="button">SEND MESSAGE NOW</button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </section>
-
-        </section>
-
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="right-info">
+                    <ul>
+                        <li>
+                            <h6>Phone Number</h6>
+                            <span>{{$setting->phone}}</span>
+                        </li>
+                        <li>
+                            <h6>Email Address</h6>
+                            <span>{{$setting->email}}</span>
+                        </li>
+                        <li>
+                            <h6>Street Address</h6>
+                            <span>{{$setting->address}}</span>
+                        </li>
+                        <li>
+                            <h6>Website URL</h6>
+                            <span>www.meeting.edu</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-
 
 
 
 @include('home._footer')
+</section>
 </body>
 </html>

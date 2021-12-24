@@ -1,64 +1,79 @@
-<!DOCTYPE HTML>
-<!--
-	Landed by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>User Profile</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>Education Template - Meeting Detail Page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{asset('vendor')}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{asset('assets')}}/css/fontawesome.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/owl.css">
+    <link rel="stylesheet" href="{{asset('assets')}}/css/lightbox.css">
+    <!--
+
+    TemplateMo 569 Edu Meeting
+
+    https://templatemo.com/tm-569-edu-meeting
+
+    -->
 </head>
-<body class="is-preload landing">
+<body>
 
 @include('home._header')
 
-<!-- Main -->
-<div id="main" class="wrapper style1">
+<section class="heading-page header-text" id="top">
     <div class="container">
-        <header class="major">
-            <h2>{{Auth::user()->name}}'s Profile</h2>
+        <div class="row">
+            <div class="col-lg-12">
 
-        </header>
-        <div class="row gtr-150">
-            <div class="col-2 col-12-medium">
-
-                <!-- Sidebar -->
-                <section id="sidebar">
-                    <section>
-                        <h3>User Panel</h3>
-
-                        <footer>
-                            <ul class="list-links">
-                                <li><a href="{{route('myprofile')}}" >My Profile</a></li>
-                                <li><a href="#" >Content</a></li>
-                                <li><a href="#" >Activities</a></li>
-                                <li><a href="#" >Payments</a></li>
-                                <li><a href="{{route('admin_logout')}}" >Logout</a></li>
-
-                            </ul>
-                        </footer>
-                    </section>
-                    <hr/>
-
-                </div>
-            <div class="col-10 col-12-medium imp-medium">
-
-                <!-- Content -->
-                <section id="content">
-
-                    @include('profile.show')
-                </section>
-
+                <h2>{{Auth::user()->name}}'s Profile</h2>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<section class="meetings-page" id="meetings">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="meeting-single-item">
+                            <div class="thumb">
+                                <a href=""><img src="images/pic07.jpg" alt=""></a>
+                                <div class="contact-us">
+                                @include('profile.show')
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                        <div class="main-button-red">
+                            <a href="{{route('home')}}">Back To Home Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+
+
 
 
 @include('home._footer')
+</section>
 
 </body>
 </html>

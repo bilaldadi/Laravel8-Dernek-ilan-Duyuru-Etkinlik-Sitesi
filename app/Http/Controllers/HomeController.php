@@ -21,9 +21,27 @@ class HomeController extends Controller
     public function index(){
 
        $setting= Setting::first();
-       return view('home.index',['setting'=>$setting,'page'=>'home']);
+       $daily= Content::all();
+
+
+       $data= [
+           'setting'=>$setting,
+           'daily'=>$daily,
+           'page'=>'home'
+       ];
+
+       return view('home.index',$data);
 
     }
+
+
+    public static function daily(){
+
+        $daily= Content::first();
+        return view('home._main',($daily));
+
+    }
+
 
 
     public function aboutus(){

@@ -1,52 +1,63 @@
-<!-- Footer -->
-<footer id="footer">
-    <ul class="icons">
-
-        <li><a href="https://www.facebook.com/belal.daady/" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-        <li><a href="https://www.linkedin.com/in/bilal-dadi-894a471b6/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-        <li><a href="https://www.instagram.com/bilal.d7/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="https://github.com/bilaldadi" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-
-    </ul>
-    <ul class="copyright">
-        <li>&copy; ESC Association. All rights reserved.</li>
-    </ul>
-</footer>
-
+<div class="footer">
+    <p>Copyright © 2022 ESC Association. All Rights Reserved.</p>
 </div>
+</section>
 
 <!-- Scripts -->
-<script src="{{asset('assets')}}/js/jquery.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery.scrolly.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery.dropotron.min.js"></script>
-<script src="{{asset('assets')}}/js/jquery.scrollex.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="{{asset('vendor')}}/jquery/jquery.min.js"></script>
+<script src="{{asset('vendor')}}/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="{{asset('assets')}}/js/isotope.min.js"></script>
+<script src="{{asset('assets')}}/js/owl-carousel.js"></script>
+<script src="{{asset('assets')}}/js/lightbox.js"></script>
+<script src="{{asset('assets')}}/js/tabs.js"></script>
+<script src="{{asset('assets')}}/js/video.js"></script>
+<script src="{{asset('assets')}}/js/slick-slider.js"></script>
+<script src="{{asset('assets')}}/js/custom.js"></script>
+<script>
+    //according to loftblog tut
+    $('.nav li:first').addClass('active');
 
-<script type="text/javascript">
-    $(document).ready(function(){
+    var showSection = function showSection(section, isAnimate) {
+        var
+            direction = section.replace(/#/, ''),
+            reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+            reqSectionPos = reqSection.offset().top - 0;
 
-        $(".Modern-Slider").slick({
-            autoplay:true,
-            autoplaySpeed:10000,
-            speed:900,
-            slidesToShow:1,
-            slidesToScroll:1,
-            pauseOnHover:false,
-            dots:true,
-            pauseOnDotsHover:true,
-            cssEase:'linear',
-            fade:true,
-            draggable:false,
-            prevArrow:'<button class="PrevArrow"></button>',
-            nextArrow:'<button class="NextArrow"></button>',
+        if (isAnimate) {
+            $('body, html').animate({
+                    scrollTop: reqSectionPos },
+                800);
+        } else {
+            $('body, html').scrollTop(reqSectionPos);
+        }
+
+    };
+
+    var checkSection = function checkSection() {
+        $('.section').each(function () {
+            var
+                $this = $(this),
+                topEdge = $this.offset().top - 80,
+                bottomEdge = topEdge + $this.height(),
+                wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+                var
+                    currentId = $this.data('section'),
+                    reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                reqLink.closest('li').addClass('active').
+                siblings().removeClass('active');
+            }
         });
+    };
 
-    })
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+        e.preventDefault();
+        showSection($(this).attr('href'), true);
+    });
+
+    $(window).scroll(function () {
+        checkSection();
+    });
 </script>
-
-
-<script src="{{asset('assets')}}/js/browser.min.js"></script>
-<script src="{{asset('assets')}}/js/breakpoints.min.js"></script>
-<script src="{{asset('assets')}}/js/util.js"></script>
-<script src="{{asset('assets')}}/js/main.js"></script>

@@ -2,12 +2,10 @@
     $parentMenus= \App\Http\Controllers\HomeController::menulist();
 @endphp
 
-<li><a href="#">Menus</a>
-    <ul>
         @foreach($parentMenus as $rs)
-            <li><a>{{$rs->title}}</a>
+            <li class="has-sub"><a href="javascript:void(0)">{{$rs->title}}</a>
 
-                <ul>
+                <ul class="sub-menu">
 
                     <li><a href="#">
                             @if(count($rs->children))
@@ -18,5 +16,5 @@
             </li>
         @endforeach
 
-    </ul>
+
 </li>
