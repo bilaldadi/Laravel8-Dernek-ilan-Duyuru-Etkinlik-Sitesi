@@ -54,7 +54,7 @@
                                 <a href=""><img src="{{asset('images')}}/pic07.jpg" alt=""></a>
                             </div>
                             <div class="down-content">
-                                <a href=""><h4>{{$data->title}}</h4></a>
+                                <h4 class="text-center deatils">{{$data->title}}</h4></a>
 
                                 <p>
                                     {!! $data->description !!}

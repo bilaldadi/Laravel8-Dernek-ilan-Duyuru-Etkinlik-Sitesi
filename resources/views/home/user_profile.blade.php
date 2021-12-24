@@ -43,7 +43,7 @@
     </div>
 </section>
 
-<section class="meetings-page" id="meetings">
+<section class="meetings-page">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -51,9 +51,51 @@
                     <div class="col-lg-12">
                         <div class="meeting-single-item">
                             <div class="thumb">
-                                <a href=""><img src="images/pic07.jpg" alt=""></a>
-                                <div class="contact-us">
-                                @include('profile.show')
+                                <img src="images/pic07.jpg" alt="">
+                            </div>
+                                <div class="down-content">
+                                    <div class="row">
+                                        <x-app-layout>
+                                        <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+                                        @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+                                            @livewire('profile.update-profile-information-form')
+
+                                        @endif
+                                        </div>
+                                        </x-app-layout>
+
+                                        <x-app-layout>
+                                        @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
+                                            <div class="mt-10 sm:mt-0">
+                                                @livewire('profile.update-password-form')
+                                            </div>
+
+                                        @endif
+
+                                        </x-app-layout>
+
+                                        <x-app-layout>
+                                        @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
+                                            <div class="mt-10 sm:mt-0">
+                                                @livewire('profile.two-factor-authentication-form')
+                                            </div>
+
+                                        @endif
+                                        </x-app-layout>
+                                        <x-app-layout>
+                                        <div class="mt-10 sm:mt-0">
+                                            @livewire('profile.logout-other-browser-sessions-form')
+                                        </div>
+
+                                        @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
+
+
+                                            <div class="mt-10 sm:mt-0">
+                                                @livewire('profile.delete-user-form')
+                                            </div>
+                                        @endif
+                                        </x-app-layout>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-12">
