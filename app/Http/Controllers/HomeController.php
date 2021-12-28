@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Menu;
 use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -21,12 +23,11 @@ class HomeController extends Controller
     public function index(){
 
        $setting= Setting::first();
-       $daily= Content::all();
+
 
 
        $data= [
            'setting'=>$setting,
-           'daily'=>$daily,
            'page'=>'home'
        ];
 
@@ -38,8 +39,14 @@ class HomeController extends Controller
     public static function daily(){
 
         $daily= Content::first();
-        return view('home._main',($daily));
+        return view('home.index',($daily));
 
+    }
+
+    public function faq(){
+
+        $datalist= Faq::all();
+        return view('home.faq',['datalist'=>$datalist]);
     }
 
 

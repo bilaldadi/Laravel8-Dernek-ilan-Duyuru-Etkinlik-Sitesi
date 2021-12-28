@@ -25,6 +25,7 @@ Route::get('/contact', [HomeController:: class ,'contact'])-> name('contact');
 Route::post('/sendmessage', [HomeController:: class ,'sendmessage'])-> name('sendmessage');
 Route::get('/menucontents/{id}/{description}', [HomeController:: class ,'menucontents'])-> name('menucontents');
 Route::get('/content/{id}/{title}', [HomeController:: class ,'content'])-> name('content');
+Route::get('/faqs', [HomeController:: class ,'faq'])-> name('faqs');
 
 
 
@@ -106,6 +107,22 @@ Route::prefix('message')->group(function (){
 });
 
 #End Messages
+
+#FAQ
+Route::prefix('faq')->group(function() {
+
+
+    Route::get('/', [\App\Http\Controllers\Admin\FaqController:: class ,'index'])->name('admin_faq');
+    Route::post('store', [\App\Http\Controllers\Admin\FaqController:: class ,'store'])->name('admin_faq_store');
+    Route::get('create', [\App\Http\Controllers\Admin\FaqController:: class ,'create'])->name('admin_faq_add');
+    Route::post('update/{id}', [\App\Http\Controllers\Admin\FaqController:: class ,'update'])->name('admin_faq_update');
+    Route::get('edit/{id}', [\App\Http\Controllers\Admin\FaqController:: class ,'edit'])->name('admin_faq_edit');
+    Route::get('delete/{id}', [\App\Http\Controllers\Admin\FaqController:: class ,'destroy'])->name('admin_faq_delete');
+    Route::get('show', [\App\Http\Controllers\Admin\FaqController:: class ,'show'])->name('admin_faq_show');
+
+});
+#End FAQ
+
 
 
 

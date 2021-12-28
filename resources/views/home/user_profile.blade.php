@@ -43,6 +43,26 @@
     </div>
 </section>
 
+
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-sm-8">
+                <div class="left-content">
+                    <ul>
+
+                        <li style="color: white"><a href="#">Payment</a></li>
+                        <li style="color: white"><a href="#">My Qustions</a></li>
+                        <li style="color: white"><a href="{{route('admin_logout')}}">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <section class="meetings-page">
     <div class="container">
         <div class="row">

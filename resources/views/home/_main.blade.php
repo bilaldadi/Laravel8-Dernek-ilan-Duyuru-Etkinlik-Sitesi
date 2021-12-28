@@ -101,12 +101,12 @@ $daily=\App\Http\Controllers\HomeController::daily()
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-heading">
-                    <h2>Upcoming Meetings</h2>
+                    <h2>All Categories</h2>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="categories">
-                    <h4>Catgories</h4>
+                    <h4>Categories</h4>
                     <ul>
                         <li><a href="#">Announcments</a></li><br>
                         <li><a href="#">Activities</a></li><br>
@@ -116,71 +116,24 @@ $daily=\App\Http\Controllers\HomeController::daily()
 
                 </div>
             </div>
+
+
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="meeting-item">
                             <div class="thumb">
-                                <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt="New Lecturer Meeting"></a>
+                                <a href=""><img src="{{Storage::url($daily->image)}}" alt="New Lecturer Meeting"></a>
                             </div>
                             <div class="down-content">
 
-                                <a><h4>{{$daily->title}}</h4></a>
-                                <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
+                                <a href="{{route('content',['id'=>$daily->id,'title'=>$daily->title])}}"><h4>{{$daily->title}}</h4></a>
+                                <p>{{$daily->updated_at}}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="meeting-item">
-                            <div class="thumb">
-                                <div class="price">
-                                    <span>$36.00</span>
-                                </div>
-                                <a href="meeting-details.html"><img src="assets/images/meeting-02.jpg" alt="Online Teaching"></a>
-                            </div>
-                            <div class="down-content">
-                                <div class="date">
-                                    <h6>Nov <span>24</span></h6>
-                                </div>
-                                <a href="meeting-details.html"><h4>Online Teaching Techniques</h4></a>
-                                <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="meeting-item">
-                            <div class="thumb">
-                                <div class="price">
-                                    <span>$14.00</span>
-                                </div>
-                                <a href="meeting-details.html"><img src="assets/images/meeting-03.jpg" alt="Higher Education"></a>
-                            </div>
-                            <div class="down-content">
-                                <div class="date">
-                                    <h6>Nov <span>26</span></h6>
-                                </div>
-                                <a href="meeting-details.html"><h4>Higher Education Conference</h4></a>
-                                <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="meeting-item">
-                            <div class="thumb">
-                                <div class="price">
-                                    <span>$48.00</span>
-                                </div>
-                                <a href="meeting-details.html"><img src="assets/images/meeting-04.jpg" alt="Student Training"></a>
-                            </div>
-                            <div class="down-content">
-                                <div class="date">
-                                    <h6>Nov <span>30</span></h6>
-                                </div>
-                                <a href="meeting-details.html"><h4>Student Training Meetup</h4></a>
-                                <p>Morbi in libero blandit lectus<br>cursus ullamcorper.</p>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
         </div>
@@ -197,7 +150,7 @@ $daily=\App\Http\Controllers\HomeController::daily()
             <div class="col-lg-6">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h2>A Few Facts About Our University</h2>
+                        <h2>A Few Facts About Our Association</h2>
                     </div>
                     <div class="col-lg-6">
                         <div class="row">

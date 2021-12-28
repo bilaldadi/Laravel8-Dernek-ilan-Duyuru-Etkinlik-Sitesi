@@ -37,8 +37,18 @@
 
                         @include('home._menu')
 
-                        <li><a href="{{route('aboutus')}}">About Us</a></li>
-                        <li><a href="{{route('contact')}}">Contact</a></li>
+
+                        <li class="has-sub">
+                            <a href="javascript:void(0)">Us</a>
+                            <ul class="sub-menu">
+                                <li><a href="{{route('aboutus')}}">About Us</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
+                                <li><a href="{{route('faqs')}}">FAQ</a></li>
+                            </ul>
+                        </li>
+
+
+
 
                         @auth
                             <li><a href="{{route('myprofile')}}">{{Auth::user()->name}}</a></li>

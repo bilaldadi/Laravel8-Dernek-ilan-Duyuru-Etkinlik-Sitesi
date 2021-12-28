@@ -51,6 +51,12 @@
                     <span>Messages</span></a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin_faq')}}">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>FAQ</span></a>
+            </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
