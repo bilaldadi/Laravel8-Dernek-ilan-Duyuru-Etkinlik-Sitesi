@@ -14,11 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.index');
-})->name('home');
-
-
+Route::get('/', [HomeController:: class ,'index'])-> name('home');
 Route::get('/aboutus', [HomeController:: class ,'aboutus'])-> name('aboutus');
 Route::get('/references', [HomeController:: class ,'references'])-> name('references');
 Route::get('/contact', [HomeController:: class ,'contact'])-> name('contact');
@@ -26,6 +22,7 @@ Route::post('/sendmessage', [HomeController:: class ,'sendmessage'])-> name('sen
 Route::get('/menucontents/{id}/{description}', [HomeController:: class ,'menucontents'])-> name('menucontents');
 Route::get('/content/{id}/{title}', [HomeController:: class ,'content'])-> name('content');
 Route::get('/faqs', [HomeController:: class ,'faq'])-> name('faqs');
+Route::get('/daily', [HomeController:: class ,'daily'])-> name('daily');
 
 
 
@@ -88,6 +85,8 @@ Route::post('/setting/update', [\App\Http\Controllers\Admin\SettingController:: 
 Route::middleware(['auth'])->prefix('myaccount')->namespace('myaccount')->group(function() {
 
     Route::get('/', [\App\Http\Controllers\UserController:: class ,'index'])->name('myprofile');
+    Route::get('/myreviews', [\App\Http\Controllers\UserController:: class ,'myreviews'])->name('myreviews');
+    Route::get('/destroymyreview/{$id}',[\App\Http\Controllers\UserController::class,'destroymyreview'])->name('user_review_delete');
 
 });
 
@@ -107,6 +106,8 @@ Route::prefix('message')->group(function (){
 });
 
 #End Messages
+
+
 
 #FAQ
 Route::prefix('faq')->group(function() {

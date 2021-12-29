@@ -23,25 +23,16 @@ class HomeController extends Controller
     public function index(){
 
        $setting= Setting::first();
+       $daily = Content::select('id','type','title','description','keywords','image')->limit(5)->get();
 
 
 
-       $data= [
-           'setting'=>$setting,
-           'page'=>'home'
-       ];
 
-       return view('home.index',$data);
+       return view('home.index',['setting'=>$setting,'daily'=>$daily]);
 
     }
 
 
-    public static function daily(){
-
-        $daily= Content::first();
-        return view('home.index',($daily));
-
-    }
 
     public function faq(){
 
