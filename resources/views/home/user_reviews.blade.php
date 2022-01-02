@@ -53,42 +53,44 @@
                             <div class="thumb">
                                 <a href=""><img src="images/pic07.jpg" alt=""></a>
                             </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
+                            <div class="responstable">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                         <tr>
-                                            <th style="color: white">Id</th>
-                                            <th style="color: white">Content</th>
-                                            <th style="color: white">Subject</th>
-                                            <th style="color: white">Review</th>
-                                            <th style="color: white">Rate</th>
-
+                                            <th>Id</th>
+                                            <th>Content</th>
+                                            <th>Subject</th>
+                                            <th>Review</th>
+                                            <th>Rate</th>
+                                            <th>Delete</th>
 
                                         </tr>
                                         </thead>
                                         <tbody>
                                         @foreach ($datalist as $rs)
                                             <tr>
-                                                <td style="color: white">{{$rs->id}}</td>
+                                                <td>{{$rs->id}}</td>
                                                 <td style="color: white">
-                                                   {{$rs->title}}
+                                                    <a href="{{route('content',['id'=>$rs->content->id,'title'=>$rs->content->title])}}">
+                                                                {{$rs->content->title}}</a>
                                                 </td>
-                                                <td style="color: white">{{$rs->subject}}</td>
-                                                <td style="color: white">{{$rs->review}}</td>
-
-
+                                                <td>{{$rs->subject}}</td>
+                                                <td>{{$rs->review}}</td>
+                                                <td>{{$rs->rate}}</td>
+                                                <td>
+                                                    <a href="{{ route('user_review_delete' ,['id' =>$rs->id])}}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger btn-circle btn-lg">
+                                                        <i class="fa fa-trash"></i></a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                         </tbody>
                                     </table>
-                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-12">
                         <div class="main-button-red">
-                            <a href="meetings.html">Back To Meetings List</a>
+                            <a href="/">Back To Home Page</a>
                         </div>
                     </div>
                 </div>

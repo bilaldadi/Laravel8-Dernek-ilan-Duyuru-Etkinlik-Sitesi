@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     protected $fillable = [
+
         'content_id',
         'user_id',
         'IP',
@@ -16,5 +17,14 @@ class Review extends Model
         'rate'
 
     ];
+
+    public function content(){
+        return $this->belongsTo(Content::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     use HasFactory;
 }

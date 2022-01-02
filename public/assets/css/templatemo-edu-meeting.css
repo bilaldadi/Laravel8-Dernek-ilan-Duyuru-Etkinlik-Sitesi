@@ -23,16 +23,16 @@ Table of contents
 12. portfolio
 
 --------------------------------------------- */
-/* 
+/*
 ---------------------------------------------
 font & reset css
---------------------------------------------- 
+---------------------------------------------
 */
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
-/* 
+/*
 ---------------------------------------------
 reset
---------------------------------------------- 
+---------------------------------------------
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
@@ -118,10 +118,10 @@ img {
   overflow: hidden;
 }
 
-/* 
+/*
 ---------------------------------------------
 global styles
---------------------------------------------- 
+---------------------------------------------
 */
 html,
 body {
@@ -190,7 +190,7 @@ body {
 .section-heading h2 {
   line-height: 40px;
   margin-top: 0px;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(250,250,250,0.15);
   font-size: 22px;
@@ -200,10 +200,10 @@ body {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 header
---------------------------------------------- 
+---------------------------------------------
 */
 
 .sub-header {
@@ -676,10 +676,87 @@ header
 }
 
 
-/* 
+/*
+---------------------------------------------
+table
+---------------------------------------------
+*/
+.responstable {
+    margin: 1em 0;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    color: #024457;
+    border-radius: 10px;
+    border: 1px solid #167f92;
+}
+.responstable tr {
+    border: 1px solid #d9e4e6;
+}
+.responstable tr:nth-child(odd) {
+    background-color: #eaf3f3;
+}
+.responstable th {
+    display: none;
+    border: 1px solid #fff;
+    background-color: #a12c2f;
+    color: #fff;
+    padding: 1em;
+}
+.responstable th:first-child {
+    display: table-cell;
+    text-align: center;
+}
+.responstable th:nth-child(2) {
+    display: table-cell;
+}
+.responstable th:nth-child(2) span {
+    display: none;
+}
+.responstable th:nth-child(2):after {
+    content: attr(data-th);
+}
+@media (min-width: 480px) {
+    .responstable th:nth-child(2) span {
+        display: block;
+    }
+    .responstable th:nth-child(2):after {
+        display: none;
+    }
+}
+.responstable td {
+    display: block;
+    word-wrap: break-word;
+    max-width: 7em;
+}
+.responstable td:first-child {
+    display: table-cell;
+    text-align: center;
+    border-right: 1px solid #d9e4e6;
+}
+@media (min-width: 480px) {
+    .responstable td {
+        border: 1px solid #d9e4e6;
+    }
+}
+.responstable th,
+.responstable td {
+    text-align: left;
+    margin: 0.5em 1em;
+}
+@media (min-width: 480px) {
+    .responstable th,
+    .responstable td {
+        display: table-cell;
+        padding: 1em;
+    }
+}
+
+
+/*
 ---------------------------------------------
 banner
---------------------------------------------- 
+---------------------------------------------
 */
 
 .main-banner {
@@ -814,7 +891,7 @@ services
   top: 50%;
   transform: translateY(-25px);
 }
-    
+
 .services .owl-nav .owl-prev{
   margin-right: 10px;
   outline: none;
@@ -882,6 +959,124 @@ services
 
 
 /*
+
+/*
+---------------------------------------------
+services2
+---------------------------------------------
+*/
+
+.services2 {
+    margin-top: 135px;
+    width: 100%;
+}
+
+.services2 .item {
+    background-image: url(../images/service-item-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    padding: 40px;
+}
+
+.services2 .item .icon {
+    max-width: 60px;
+    margin: 0 auto;
+}
+
+.services2 .item h4 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.services2 .item p {
+    color: #fff;
+    font-size: 13px;
+}
+
+.services2 .owl-nav {
+    display: inline-block !important;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-25px);
+}
+
+.services2 .owl-nav .owl-prev{
+    margin-right: 10px;
+    outline: none;
+    position: absolute;
+    left: -80px;
+}
+
+.services2 .owl-nav .owl-prev span,
+.services2 .owl-nav .owl-next span {
+    opacity: 0;
+}
+
+.services2 .owl-nav .owl-prev:before {
+    display: inline-block;
+    font-family: 'FontAwesome';
+    color: #1e1e1e;
+    font-size: 25px;
+    font-weight: 700;
+    content: '\f104';
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+}
+
+.services2 .owl-nav .owl-prev {
+    opacity: 1;
+    transition: all .5s;
+}
+
+.services2 .owl-nav .owl-prev:hover {
+    opacity: 0.9;
+}
+
+.services2 .owl-nav .owl-next {
+    opacity: 1;
+    transition: all .5s;
+}
+
+.services2 .owl-nav .owl-next:hover {
+    opacity: 0.9;
+}
+
+.services2 .owl-nav .owl-next{
+    margin-left: 10px;
+    outline: none;
+    position: absolute;
+    right: -85px;
+}
+
+.services2 .owl-nav .owl-next:before {
+    display: inline-block;
+    font-family: 'FontAwesome';
+    color: #1e1e1e;
+    font-size: 25px;
+    font-weight: 700;
+    content: '\f105';
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+}
+
+
+/*
+
+
 ---------------------------------------------
 upcoming meetings
 ---------------------------------------------
@@ -1063,7 +1258,7 @@ section.apply-now .item p {
   border-bottom: none;
 }
 .accordion-head {
-  padding: 20px;  
+  padding: 20px;
   font-size: 18px;
   font-weight: 700;
   color: #1f272b;
@@ -1100,10 +1295,10 @@ section.apply-now .item p {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 courses
---------------------------------------------- 
+---------------------------------------------
 */
 
 section.our-courses {
@@ -1124,7 +1319,7 @@ section.our-courses {
   padding: 25px;
   font-size: 18px;
   color: #1f272b;
-  text-align: center; 
+  text-align: center;
   border-bottom: 1px solid #eee;
 }
 
@@ -1181,7 +1376,7 @@ section.our-courses {
   height: 8px;
   border-radius: 4px;
 }
-    
+
 .our-courses .owl-nav .owl-prev{
   margin-right: 10px;
   outline: none;
@@ -1318,10 +1513,10 @@ section.our-facts .video img {
 }
 
 
-/* 
+/*
 ---------------------------------------------
 contact us
---------------------------------------------- 
+---------------------------------------------
 */
 
 section.contact-us {
@@ -1350,7 +1545,7 @@ section.contact-us #contact h2 {
 }
 
 section.contact-us #contact input {
-  
+
   height: 40px;
   border-radius: 20px;
   background-color: #f7f7f7;
@@ -1627,7 +1822,7 @@ section.meetings-page .pagination ul li a:hover {
   font-size: 22px;
   color: #1f272b;
   font-weight: 600;
-  
+
   margin-bottom: 15px;
 }
 
@@ -1696,10 +1891,10 @@ section.meetings-page .pagination ul li a:hover {
 	}
 }
 
-/* 
+/*
 ---------------------------------------------
 responsive
---------------------------------------------- 
+---------------------------------------------
 */
 
 @media (max-width: 1300px) {

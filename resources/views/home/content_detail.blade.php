@@ -166,6 +166,38 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="owl-service-item owl-carousel">
+                        @foreach($reviews as $rs)
+                         <div class="item">
+                            <div class="icon">
+                                <img src="assets/images/service-icon-01.png" alt="">
+                            </div>
+                            <div class="down-content">
+                                <h4>{{$rs->user->name}}</h4>
+                                <p>{{$rs->review}}.</p>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
 
 
 @include('home._footer')

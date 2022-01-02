@@ -86,7 +86,7 @@ Route::middleware(['auth'])->prefix('myaccount')->namespace('myaccount')->group(
 
     Route::get('/', [\App\Http\Controllers\UserController:: class ,'index'])->name('myprofile');
     Route::get('/myreviews', [\App\Http\Controllers\UserController:: class ,'myreviews'])->name('myreviews');
-    Route::get('/destroymyreview/{$id}',[\App\Http\Controllers\UserController::class,'destroymyreview'])->name('user_review_delete');
+    Route::get('/destroymyreview/{id}',[\App\Http\Controllers\UserController::class,'destroymyreview'])->name('user_review_delete');
 
 });
 
