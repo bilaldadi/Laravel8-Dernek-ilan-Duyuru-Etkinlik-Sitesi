@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Jetstream\Role;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -61,6 +62,12 @@ class User extends Authenticatable
 
     public function reviews(){
         return $this->hasMany(Review::class);
+    }
+
+
+    public function roles(){
+
+        return $this->belongsToMany(\App\Models\Role::class);
     }
 
 }

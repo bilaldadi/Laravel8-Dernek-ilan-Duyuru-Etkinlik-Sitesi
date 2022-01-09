@@ -51,7 +51,8 @@
 
 
                         @auth
-                            <li><a href="{{route('myprofile')}}">{{Auth::user()->name}}</a></li>
+                            <li><a href="{{route('myprofile')}}">{{Auth::user()->name}}</a>
+                            {{Auth::user()->roles->pluck('name')}}</li>
                             <li><a href="{{route('admin_logout')}}">Log out</a></li>
                         @endauth
                         @guest

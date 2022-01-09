@@ -41,6 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
+                                    @include('home.message')
                                     <form class="user" action = "{{ route('admin_logincheck') }}" method="post">
                                         @csrf
                                         <div class="form-group">

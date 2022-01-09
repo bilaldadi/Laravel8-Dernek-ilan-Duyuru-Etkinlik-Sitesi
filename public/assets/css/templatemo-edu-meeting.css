@@ -967,7 +967,7 @@ services2
 */
 
 .services2 {
-    margin-top: 135px;
+    margin-top: 50px;
     width: 100%;
 }
 
@@ -1012,7 +1012,7 @@ services2
     margin-right: 10px;
     outline: none;
     position: absolute;
-    left: -80px;
+    left: -30px;
 }
 
 .services2 .owl-nav .owl-prev span,
@@ -1056,7 +1056,7 @@ services2
     margin-left: 10px;
     outline: none;
     position: absolute;
-    right: -85px;
+    right: -35px;
 }
 
 .services2 .owl-nav .owl-next:before {

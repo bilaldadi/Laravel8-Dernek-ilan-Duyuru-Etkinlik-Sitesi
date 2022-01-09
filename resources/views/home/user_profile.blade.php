@@ -43,7 +43,7 @@
     </div>
 </section>
 
-
+@auth
 <div class="sub-header">
     <div class="container">
         <div class="row">
@@ -53,6 +53,12 @@
 
                         <li style="color: white"><a href="#">Payment</a></li>
                         <li style="color: white"><a href="{{route('myreviews')}}">My Reviews</a></li>
+                        @php
+                            $userRoles= Auth::user()->roles->pluck('name');
+                        @endphp
+                        @if($userRoles->contains('admin'))
+                            <li style="color: white"><a href="{{route('admin_home')}}">Admin Panel</a></li>
+                        @endif
                         <li style="color: white"><a href="{{route('admin_logout')}}">Logout</a></li>
 
                     </ul>
@@ -61,6 +67,7 @@
         </div>
     </div>
 </div>
+@endauth
 
 
 <section class="meetings-page">

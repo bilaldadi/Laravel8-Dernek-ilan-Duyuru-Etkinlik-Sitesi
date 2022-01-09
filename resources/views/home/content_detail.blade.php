@@ -182,7 +182,8 @@
                             </div>
                             <div class="down-content">
                                 <h4>{{$rs->user->name}}</h4>
-                                <p>{{$rs->review}}.</p>
+                                <p>{{$rs->subject}}</p>
+                                <p>{{$rs->review}}</p>
                             </div>
                         </div>
                         @endforeach
