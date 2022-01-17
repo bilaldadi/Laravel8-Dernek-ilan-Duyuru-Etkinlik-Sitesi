@@ -79,6 +79,21 @@ Route::middleware('auth')->prefix('admin')->group(function() {
 
 #End Messages
 
+        #payment
+
+        Route::prefix('payment')->group(function () {
+
+            Route::get('/', [\App\Http\Controllers\Admin\PaymentController:: class, 'index'])->name('admin_payment');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\PaymentController:: class, 'edit'])->name('admin_payment_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\PaymentController:: class, 'update'])->name('admin_payment_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\PaymentController:: class, 'destroy'])->name('admin_payment_delete');
+            Route::get(' show', [\App\Http\Controllers\Admin\PaymentController:: class, 'show'])->name('admin_payment_show');
+
+        });
+
+
+        #endpayment
+
     Route::prefix('image')->group(function () {
 
         Route::get('/image/create/{content_id}', [\App\Http\Controllers\Admin\ImageController:: class, 'create'])->name('admin_image_add');
@@ -128,6 +143,28 @@ Route::middleware(['auth'])->prefix('myaccount')->namespace('myaccount')->group(
     Route::get('/destroymyreview/{id}',[\App\Http\Controllers\UserController::class,'destroymyreview'])->name('user_review_delete');
 
 });
+
+
+Route::middleware(['auth'])->prefix('payment')->namespace('payment')->group(function() {
+
+
+        Route::get('/', [\App\Http\Controllers\PaymentController:: class, 'index'])->name('user_payments');
+        Route::post('store', [\App\Http\Controllers\PaymentController:: class, 'store'])->name('user_payment_store');
+        Route::post('create', [\App\Http\Controllers\PaymentController:: class, 'create'])->name('user_payment_add');
+        Route::post('update/{id}', [\App\Http\Controllers\PaymentController:: class, 'update'])->name('user_payment_update');
+        Route::get('edit/{id}', [\App\Http\Controllers\PaymentController:: class, 'edit'])->name('user_payment_edit');
+        Route::get('delete/{id}', [\App\Http\Controllers\PaymentController:: class, 'destroy'])->name('user_payment_delete');
+        Route::get('show', [\App\Http\Controllers\PaymentController:: class, 'show'])->name('user_payment_show');
+
+    });
+
+
+
+
+
+
+
+    #End_payment
 
 #Enduser
 

@@ -7,6 +7,7 @@ use App\Models\Faq;
 use App\Models\Image;
 use App\Models\Menu;
 use App\Models\Message;
+use App\Models\payment;
 use App\Models\Review;
 use App\Models\Setting;
 use Illuminate\Http\Request;
@@ -73,7 +74,16 @@ class HomeController extends Controller
         $data= Content::find($id);
         $datalist=Image::where('content_id',$id)->get();
         $reviews=Review::where('content_id',$id)->get();
-        return view('home.content_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
+
+        $payment_stat = payment::where([
+            ['user_id','=', Auth::user()->id],
+            ['status','=','Accepted']
+            ])->get('status');
+
+        if ($payment_stat == '[{"status":"Accepted"}]')
+            return view('home.content_detail',['data'=>$data,'datalist'=>$datalist,'reviews'=>$reviews]);
+        else
+            return view('home.payplease');
 
     }
 

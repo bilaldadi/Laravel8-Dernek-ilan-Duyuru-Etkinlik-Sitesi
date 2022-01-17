@@ -51,7 +51,7 @@
                 <div class="left-content">
                     <ul>
 
-                        <li style="color: white"><a href="#">Payment</a></li>
+                        <li style="color: white"><a href="{{route('user_payments')}}">Payment</a></li>
                         <li style="color: white"><a href="{{route('myreviews')}}">My Reviews</a></li>
                         @php
                             $userRoles= Auth::user()->roles->pluck('name');

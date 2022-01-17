@@ -9,7 +9,7 @@
     <meta name="author" content="Template Mo">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-    <title>Education Template - Meeting Detail Page</title>
+    <title>My Reviews Page</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{asset('vendor')}}/bootstrap/css/bootstrap.min.css" rel="stylesheet">

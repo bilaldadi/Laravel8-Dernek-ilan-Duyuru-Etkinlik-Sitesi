@@ -104,8 +104,8 @@
                 <div class="categories">
                     <h4>Subscription Catgories</h4>
                     <ul>
-                        <li><a href="#">Monthly Subscription</a></li>
-                        <li><a href="#">Yearly Subscription</a></li>
+                        <li><a href={{route('user_payment_show')}}>Monthly Subscription</a></li>
+                        <li><a href={{route('user_payment_show')}}>Yearly Subscription</a></li>
 
                     </ul>
 
@@ -122,7 +122,7 @@
                                 <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt="New Lecturer Meeting"></a>
                             </div>
                             <div class="down-content">
-                                <a href="#"><h4>Monthly Subscription</h4></a>
+                                <a href={{route('user_payment_show')}}><h4>Monthly Subscription</h4></a>
                                 <p>This Monthly Subscription will allow you to have our full services for only one month.</p>
                             </div>
                         </div>
@@ -136,7 +136,7 @@
                                 <a href="meeting-details.html"><img src="assets/images/meeting-01.jpg" alt="New Lecturer Meeting"></a>
                             </div>
                             <div class="down-content">
-                                <a href="#"><h4>Yearly Subscription</h4></a>
+                                <a href={{route('user_payment_show')}}><h4>Yearly Subscription</h4></a>
                                 <p>This Yearly Subscription will allow you to have our full services for only one Year.</p>
                             </div>
                         </div>

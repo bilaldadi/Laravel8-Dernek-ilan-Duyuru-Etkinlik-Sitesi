@@ -52,6 +52,12 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{route('admin_payment')}}">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Payments</span></a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('admin_faq')}}">
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>FAQ</span></a>
